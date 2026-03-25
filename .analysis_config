@@ -1,0 +1,5 @@
+# The isolation hook allows access to these directories.
+# Set data_dir to the path where your input ROOT files live.
+# Add extra allow= lines for additional paths (one per line).
+data_dir=/n/holystore01/LABS/iaifi_lab/Lab/sambt/LEP/ALEPH/
+allow=/n/holystore01/LABS/iaifi_lab/Lab/sambt/LEP/ALEPHMC/
