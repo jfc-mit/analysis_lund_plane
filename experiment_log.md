@@ -197,3 +197,58 @@ Final yields: 2,846,194 data events (5,692,388 hemispheres), 721,175 MC events (
 ### PDF build test
 
 **2026-03-25 17:50** -- Ran `08_tectonic_test.py`. Tectonic build succeeded. PDF produced (14.5 KB). Stub deleted.
+
+## Phase 3: Selection (Ingrid, 2026-03-25)
+
+### Prototype validation
+
+**2026-03-25 18:10** -- Ran `01a_prototype.py` on 1 MC file (3 trees: reco, gen, genBefore).
+
+**Finding:** Processing time per MC file: reco 36s, gen 38s, genBefore 48s (total 122s for 3 trees). Estimated 82 min for 40 MC files sequential, ~94 min for 6 data files. Decision: use 8-worker ProcessPoolExecutor for production.
+
+**Finding:** Sanity checks pass: avg splits/hemi = 5.14 (reco), 5.44 (gen), 5.43 (genBefore). genBefore/gen = 1.272. Correction factor range 0.00-8.07 (1 file).
+
+### Full production
+
+**2026-03-25 18:14** -- Ran `01_process_all.py` with 8 parallel workers on all 46 files.
+
+**Result:** MC processing 657s wall time, data processing 1143s wall time. Total ~30 min.
+
+| Level | Hemispheres | Splittings | Splits/hemi |
+|-------|-------------|------------|-------------|
+| Data | 5,692,388 | 28,934,792 | 5.08 |
+| MC reco | 1,442,350 | 7,405,085 | 5.13 |
+| MC gen | 1,534,930 | 8,352,333 | 5.44 |
+| MC genBefore | 1,936,712 | 10,514,849 | 5.43 |
+
+### Correction infrastructure
+
+**2026-03-25 18:46** -- Ran `02_correction_infrastructure.py`.
+
+**Finding:** Bin-by-bin correction factor C = N_genBefore/N_reco: mean 1.680, median 1.468, range [1.166, 6.667]. 58/100 bins populated. 4 bins with C > 2 (kinematic boundaries). Diagonal fraction mean = 0.836, 57/58 bins above 0.50.
+
+**Finding:** Efficiency mean = 0.731, consistent with ~79% event selection efficiency at gen level.
+
+### Data/MC gate
+
+**2026-03-25 18:47** -- Ran `05_data_mc_lund.py`. Data/MC ratio: mean 1.005, std 0.105. 1D projection ratios within 5-10%. Gate: PASS.
+
+**Finding:** Large per-bin significance values (up to 34 sigma) are expected given ~5.7M data hemispheres. The physically meaningful metric is the ratio spread, which is within 10%. The MC adequately describes the data for correction derivation.
+
+### Closure test
+
+**2026-03-25 18:48** -- Ran `03_closure_test.py`. Chi2/ndf = 0.0000, p-value = 1.0. Ratio (corrected/truth) = 1.000000 in all bins.
+
+**Finding:** Bin-by-bin closure is an algebraic identity: corrected = N_reco * (N_genBefore/N_reco) = N_genBefore. This verifies the formula is implemented correctly. Split-sample closure (genuine test) in Phase 4.
+
+**Bug found and fixed:** Initial implementation normalized corrected density by N_hemi_reco instead of N_hemi_genBefore, producing a constant ratio of 1.343 (= genBefore/reco hemisphere ratio). Fixed by normalizing corrected counts by N_hemi_genBefore.
+
+### Approach comparison
+
+**2026-03-25 18:48** -- Ran `04_approach_comparison.py` on 200k data events.
+
+**Finding:** Approach A (thrust hemispheres) vs Approach C (exclusive kT 2-jets): ratio mean = 0.999, std = 0.010, chi2/ndf = 0.185. The two approaches agree within 1% across the populated Lund plane. At Thrust > 0.7, hemisphere and kT jet definitions assign particles nearly identically. Approach A confirmed as primary; Approach C difference is a negligible cross-check systematic.
+
+### Figures
+
+**2026-03-25 18:49-19:09** -- Produced 14 figures (PDF+PNG) covering 2D Lund planes, data/MC comparisons, correction maps, closure tests, and approach comparison.

@@ -1,0 +1,10 @@
+{
+  "total_events": 200000,
+  "approach_a_hemispheres": 400000,
+  "approach_c_jets": 400000,
+  "ratio_mean": 0.999226984221517,
+  "ratio_std": 0.009986457903268964,
+  "chi2": 10.555797431105571,
+  "ndf": 57,
+  "chi2_ndf": 0.18518942861588722
+}

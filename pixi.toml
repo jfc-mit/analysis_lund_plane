@@ -48,11 +48,13 @@ py = "python"
 # Usage: pixi run build-pdf -- path/to/ANALYSIS_NOTE.tex
 build-pdf = "tectonic"
 lint-plots = "python conventions/lint_plots.py ."
-# --- Analysis tasks: add as you write scripts ---
-# Each script gets an independently runnable task.
-# The "all" task chains the full sequence — this is the reproducibility contract.
-# Example:
-#   select = "python phase3_selection/src/apply_selection.py"
-#   unfold = "python phase4_inference/src/unfold.py"
-#   systematics = "python phase4_inference/src/run_systematics.py"
-#   all = "python phase3_selection/src/apply_selection.py && python phase4_inference/src/unfold.py && python phase4_inference/src/run_systematics.py"
+# --- Phase 3 tasks ---
+p3-process = "python phase3_selection/src/01_process_all.py"
+p3-correction = "python phase3_selection/src/02_correction_infrastructure.py"
+p3-closure = "python phase3_selection/src/03_closure_test.py"
+p3-approach = "python phase3_selection/src/04_approach_comparison.py"
+p3-datamc = "python phase3_selection/src/05_data_mc_lund.py"
+p3-plots = "python phase3_selection/src/06_plot_all.py"
+p3-all = "python phase3_selection/src/01_process_all.py && python phase3_selection/src/02_correction_infrastructure.py && python phase3_selection/src/05_data_mc_lund.py && python phase3_selection/src/03_closure_test.py && python phase3_selection/src/04_approach_comparison.py && python phase3_selection/src/06_plot_all.py"
+# The "all" task chains the full sequence
+all = "python phase3_selection/src/01_process_all.py && python phase3_selection/src/02_correction_infrastructure.py && python phase3_selection/src/05_data_mc_lund.py && python phase3_selection/src/03_closure_test.py && python phase3_selection/src/04_approach_comparison.py && python phase3_selection/src/06_plot_all.py"

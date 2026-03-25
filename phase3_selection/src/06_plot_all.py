@@ -16,7 +16,7 @@ import matplotlib.colors as mcolors
 import matplotlib.pyplot as plt
 import mplhep as mh
 import numpy as np
-from mplhep.plot import mpl_magic
+from mplhep.utils import mpl_magic
 from rich.logging import RichHandler
 
 logging.basicConfig(level=logging.INFO, format="%(message)s",
@@ -279,9 +279,10 @@ def main():
         # Figure 11: Pull distribution
         log.info("--- Figure 11: Pull distribution ---")
         fig, ax = plt.subplots(figsize=(10, 10))
+        n_pulls = len(pulls_flat)
         ax.hist(pulls_flat, bins=30, range=(-5, 5), color="steelblue",
                 alpha=0.7, edgecolor="black", linewidth=0.5,
-                label=f"Pulls (N={len(pulls_flat)})")
+                label=f"Pulls ($N={n_pulls}$)")
         # Gaussian overlay
         x_gauss = np.linspace(-5, 5, 200)
         from scipy.stats import norm
