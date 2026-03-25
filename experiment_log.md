@@ -123,3 +123,77 @@
 - #22: Methodology diagram added to additional figures list.
 - #25: LO overlay added to F3 description.
 - #29: Sherpa commitment made concrete [D14]: assess feasibility in Phase 2, document if infeasible.
+
+## Phase 2: Exploration (Hugo, 2026-03-25)
+
+### Sample inventory
+
+**2026-03-25 17:35** -- Ran `01_sample_inventory.py`. Full branch catalog and event counts.
+
+**Finding:** Data tree "t" has 151 branches; MC "t" has 151, "tgen" has 199, "tgenBefore" has 151. tgen has 48 extra branches (ThrustWithReco, ThrustWithGenIneff, etc.) for systematic studies. tgenBefore has zero extra branches vs t -- same schema as reco-level.
+
+**Finding:** Data 3,050,610 events; MC reco 771,597; MC gen 771,597; MC genBefore 973,769. genBefore/gen = 1.262 (~79% event selection efficiency at gen level, consistent with Phase 1 estimate).
+
+**Finding (aftercut investigation):** Data passesAll acceptance is 94.6% (data) and 94.7% (MC) -- nearly identical. The "aftercut" pre-cut removes events failing basic quality (passesNTrkMin is 100% True in data = already pre-applied). The 5.4% failing passesAll are from passesSTheta (97.7%), passesMissP (97.2%), passesISR (98.9%), passesWW (98.9%), passesNeuNch (99.5%).
+
+**Finding (tgenBefore scope):** tgenBefore passesAll is ALL False -- gen-level selection flags are zeroed in tgenBefore. passesSTheta differs: 96.2% in tgen vs 76.8% in tgenBefore, confirming tgenBefore contains events both passing and failing event selection. The STheta cut is the most discriminating at gen level.
+
+**Finding (thrust axis source):** Data "Thrust" (mean 0.938) differs from "Thrust_charged" (mean 0.937) -- confirming that the pre-computed Thrust uses energy-flow objects (charged + neutral), not charged-only. "Thrust_neutral" has mean 0.943 and reaches max 1.0. There is also "ThrustCorr" and "ThrustCorrInverse" with slightly different values. **Implication:** Must decide whether to use energy-flow Thrust (better resolution but includes neutrals) or recompute charged-only thrust. Strategy committed to investigating this.
+
+**Finding (momentum resolution):** For charged tracks (pwflag==0), median |d0| = 170 um, 68th percentile |d0| = 380 um. This is larger than TPC+ITC+VDET combined (~25 um core) but includes tracks from secondary decays and beam-pipe interactions. The d0 range is capped at +/-2 cm by pre-applied cuts. The d0 resolution is consistent with TPC+ITC tracking (not full VDET). **Phase 1 assumed TPC+ITC+VDET; Phase 2 finds TPC+ITC is more likely for the archived data.** Impact: momentum resolution sigma_p/p^2 ~ 0.8-1.0 x 10^-3 rather than 0.6 x 10^-3. This is still excellent and does not affect feasibility.
+
+**Finding (MC pwflag):** pwflag in data: {0,1,2,3,4,5}; pwflag in MC gen: {-11,0,1,2,3,4,5}. Gen-level: pwflag=0 (charged) is 43.6%, pwflag=4 (photons) is 44.7%, pwflag=-11 (ISR/material) is 1.2%.
+
+### Data quality
+
+**2026-03-25 17:36** -- Ran `02_data_quality.py`. No NaN, Inf, or negative momenta found in any branch.
+
+**Finding:** All particle-level and event-level branches have physical ranges. Thrust in [0.63, 1.00], momentum in [0.13, 45.7] GeV, theta in [0.20, 2.94] rad. Mass distribution shows 34,502 zeros (massless particles assigned m=0).
+
+**Finding (year-to-year stability):** <Thrust> varies 0.935-0.939 across years; <N_ch> varies 18.5-18.9. Excellent stability -- no year shows anomalous behavior.
+
+### Data/MC comparisons
+
+**2026-03-25 17:38** -- Ran `03_data_mc_comparisons.py` on 50k events per sample. 9 ratio plots produced.
+
+**Finding:** Data/MC agreement is excellent across all kinematic variables. Thrust, momentum, theta, phi, N_ch, hemisphere multiplicity all show Data/MC ratios within +/-5% in the bulk. No bins with >3-sigma disagreement in the core regions.
+
+### Cutflow
+
+**2026-03-25 17:42** -- Ran `04_cutflow.py` on ALL data and MC files.
+
+**Finding:** Cutflow results:
+
+| Cut | Data | MC | Data eff | MC eff |
+|-----|------|----|----------|--------|
+| Total | 3,050,610 | 771,597 | 100% | 100% |
+| passesAll | 2,889,543 | 731,006 | 94.72% | 94.74% |
+| Thrust > 0.7 | 2,872,177 | 726,759 | 94.15% | 94.19% |
+| N_ch >= 5 | 2,868,384 | 726,585 | 94.03% | 94.17% |
+| N_hemi >= 2 | 2,846,194 | 721,175 | 93.30% | 93.47% |
+
+Final yields: 2,846,194 data events (5,692,388 hemispheres), 721,175 MC events (1,442,350 hemispheres). Data/MC efficiency agreement <0.2% at every cut.
+
+### Reco-level Lund plane
+
+**2026-03-25 17:48** -- Ran `05_lund_plane_reco.py` on ~100k data events.
+
+**Finding:** 200,000 hemispheres processed, yielding 1,017,492 primary splittings. Average 5.09 splittings per hemisphere. The 2D Lund plane shows the expected triangular structure with kinematic boundary, perturbative plateau, and non-perturbative rise at low k_T. The shape is qualitatively consistent with published ATLAS/CMS results.
+
+### Binning optimization
+
+**2026-03-25 17:51** -- Ran `06_binning_optimization.py` on 20k MC events.
+
+**Finding (bin population):** With proposed 10x10 binning, the core bins have >100 entries even in 20k MC events. At full MC statistics (721k events), all populated bins will have >50 entries.
+
+**Finding (migration):** Mean |reco - gen| / reco = 0.14 (14%). Only 7/100 bins have migration fraction > 30%. Bin-by-bin correction is viable. The correction factor (gen/reco post-selection) is close to 1.0 in the core (within 0.8-1.2).
+
+### p_T vs energy ordering
+
+**2026-03-25 17:51** -- Ran `07_pt_vs_energy_ordering.py` on 15k MC gen-level events.
+
+**Finding:** The p_T vs energy ordering ratio is close to 1.0 over most of the plane. Differences are concentrated at large opening angles (low ln 1/Delta_theta) and high k_T, where they reach 10-20%. In the perturbative core, the difference is typically <5%. This confirms that p_T ordering is adequate as the primary choice, with energy ordering as a systematic variation (not a separate measurement).
+
+### PDF build test
+
+**2026-03-25 17:50** -- Ran `08_tectonic_test.py`. Tectonic build succeeded. PDF produced (14.5 KB). Stub deleted.
