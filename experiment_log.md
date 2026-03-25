@@ -64,3 +64,62 @@
 8. **Response matrix matching for variable-multiplicity observable was not discussed.** Added [D12]: bin-level population matching, not object-level 1:1 matching, for Lund declusterings. Addresses conventions/unfolding.md pitfall on wrong matching strategy.
 
 9. **Retrieval log was empty.** Populated with all 6 LEP corpus queries, 3 paper drilldowns, and modern methodology search results.
+
+## Phase 1: Strategy Fix (Peter, 2026-03-25)
+
+### Arbiter verdict: ITERATE
+
+**2026-03-25 17:17** -- Arbiter (Sally) returned ITERATE with 5 Category A and 16 Category B findings. Fix session initiated.
+
+### Web search: foundational paper verification (MANDATORY)
+
+**2026-03-25 17:17** -- Retrieved Dreyer/Salam/Soyez 2018 (arXiv:1807.04758) PDF. Term-by-term comparison with strategy:
+
+**Finding 1 (LO formula):** Strategy had rho_LO = alpha_s * C_F / pi (Eq. 2.6 in paper). Paper's Eq. 2.6 gives rho = 2 * alpha_s(k_T) * C_F / pi. The factor 2 arises from the soft limit of the splitting function p_{gq}(z) = (1+(1-z)^2)/z, which gives 2 as z -> 0. Strategy's numerical estimate was 0.050; correct value is ~0.100 (all-particle) or ~0.067 (charged-particle, with ~2/3 charged fraction correction). **Fixed.**
+
+**Finding 2 (Hardness variable):** Paper Section 2.1 states: "labelled such that p_{ta} > p_{tb}, where p_{ti} is the transverse momentum of i with respect to the colliding beams." The hardness variable is p_T w.r.t. beam, NOT energy. Strategy claimed energy ordering was "standard choice for e+e-" without citation -- no such standard exists. **Fixed:** p_T ordering adopted as primary, energy ordering as systematic variation.
+
+**Finding 3 (Coordinate adaptation):** Paper defines k_t = p_{tb} * Delta_{ab} for pp (Eq. 2.1a), using rapidity-azimuth distance Delta = sqrt((y_a-y_b)^2 + (phi_a-phi_b)^2). Strategy uses Delta_theta = arccos(hat{p}_1 . hat{p}_2) and k_T = |p_2| * sin(Delta_theta). The sin(Delta_theta) vs Delta_theta difference is ~16% at Delta_theta = 1 rad. **Fixed:** Explicit comparison table added, cross-collider validity regime documented.
+
+### Additional references found
+
+**2026-03-25 17:17** -- Web search for additional Lund plane measurements:
+- CMS Lund plane (JHEP 05 (2024) 116, arXiv:2312.16343): Charged-particle measurement, HEPData available
+- ATLAS top/W Lund plane (arXiv:2407.10879, EPJC 2025): W-jet = colour-singlet qq analog to Z -> qq
+- LHCb Lund plane (Phys. Rev. D 112 (2025) 072015, arXiv:2505.23530): Dead-cone observation in b-quark Lund plane
+- Lifson/Salam/Soyez NLL predictions (JHEP 10 (2020) 170, arXiv:2007.06578): 5-7% precision at high k_T
+
+### Fixes applied (all 5 Category A, all 16 Category B, selected Category C)
+
+**Category A (all 5 resolved):**
+1. LO formula corrected to rho = 2*alpha_s*C_F/pi. Numerical estimate updated to ~0.100 (all-particle), ~0.067 (charged). Propagated to Section 10.2, COMMITMENTS.md, F3 description.
+2. Hardness variable verified against paper. p_T ordering adopted as primary [D13]. "Standard choice" claim removed. Energy ordering as systematic variation.
+3. Coordinate adaptation rewritten. Sections 2.2 and 5.3 now explicitly distinguish e+e- from pp. sin(Delta_theta) usage stated. Cross-collider validity regime documented.
+4. Heavy flavour systematic added to systematic table and COMMITMENTS.md. Evaluation: reweight MC b-fraction +/-2%. LHCb 2025 dead-cone evidence cited.
+5. Binning: uniform justified as starting point. ATLAS/CMS/ALICE non-uniform cited. Phase 2 deliverables added (migration fraction, resolution study, population, non-uniform comparison).
+
+**Category B (all 16 resolved):**
+6. Hemisphere assignment reclassified as cross-check. Thrust-axis resolution systematic added.
+7. MC reweighting limitation acknowledged. Diagnostic added (reweighting factors < 3x).
+8. (Arbiter #40) Model dependence / unfolding orthogonality discussed in new Section 6.2.
+9. (Arbiter #41) Efficiency correction formula clarified: C(i,j) = N_gen_before(i,j) / N_reco(i,j) using tgenBefore.
+10. F5 renamed to "Correction factor map." Response matrix added to additional figures list.
+11. NLL predictions cited (Lifson/Salam/Soyez 2020). Commitment to investigate numerical predictions.
+12. Reference table updated with CMS 2024, ATLAS top/W 2024, LHCb 2025.
+13. Published comparison data: DELPHI/ATLAS/CMS HEPData extraction committed with caveats documented.
+14. Aftercut pre-selection: Phase 2 deliverable added with specific investigation items.
+15. IBU promoted to co-primary method. Result will use whichever passes stress tests better.
+16. Momentum resolution: TPC-only vs combined discussed. Phase 2 verification committed.
+17. Neutral thrust axis: Phase 2 investigation committed to determine archived data thrust source.
+18. (Arbiter #19) Stress test tilts specified: independent in ln(1/Delta_theta), ln(k_T), and 2D correlated. Functional form: w(x) = 1 + epsilon*(x - x_mean)/(x_max - x_mean).
+19. (Arbiter #21) IBU response matrix clarified as proper migration probability matrix (rows sum to <= 1).
+20. (Arbiter #23) Tracking efficiency: actual ALEPH per-track efficiency cited (~98.5%, NIM A 360 (1995) 481). 1% drop justified as ~1 sigma above measured inefficiency.
+21. (Arbiter #26) "First" claim qualified as "first full two-dimensional primary Lund jet plane density" throughout.
+
+**Category C (selected items applied):**
+- #28: Charged-particle correction to LO prediction noted (~2/3 factor).
+- #10: Secondary Lund plane feasibility noted in one sentence (Section 2.1).
+- #18: Explicit discrete binned formula added to Section 2.2.
+- #22: Methodology diagram added to additional figures list.
+- #25: LO overlay added to F3 description.
+- #29: Sherpa commitment made concrete [D14]: assess feasibility in Phase 2, document if infeasible.
