@@ -162,7 +162,7 @@ Following established ALEPH hadronic event selection (cds_2876991, inspire_32267
 **Alternative second approach [D7]:** Instead of MVA vs cuts (which would be two parametric variants of the same method), the two qualitatively different selection approaches will be:
 
 - **Approach A:** Hemisphere-based selection using the thrust axis (standard approach described above)
-- **Approach C:** Exclusive kT-jet-based selection. Cluster the full event with the kT (Durham) algorithm requiring exactly 2 jets (y_cut tuned so the 2-jet rate is ~80-85%). Use these 2 jets instead of thrust hemispheres. This provides a qualitatively different jet definition (algorithmic jets vs geometric hemispheres) and serves as a powerful cross-check of the observable definition.
+- **Approach C:** Exclusive kT-jet-based selection. Cluster the full event with the kT (Durham) algorithm requiring exactly 2 jets. The y_cut parameter will be determined in Phase 2 by scanning the 2-jet rate R_2(y_cut) in data and MC, and selecting the y_cut value where R_2 ~ 80-85% (this is the standard LEP approach for Durham jet studies, cf. inspire_1661966). The 2-jet rate is a smooth, monotonically decreasing function of y_cut, so the choice is well-defined and can be cross-checked between data and MC. Use these 2 jets instead of thrust hemispheres. This provides a qualitatively different jet definition (algorithmic jets vs geometric hemispheres) and serves as a powerful cross-check of the observable definition.
 
 The comparison between Approach A and Approach C tests the sensitivity of the Lund plane density to the jet definition, which is a physics-relevant systematic.
 
@@ -206,7 +206,7 @@ This produces an angular-ordered clustering tree. The last merging corresponds t
 Starting from the fully clustered hemisphere jet, the primary declustering proceeds by:
 
 1. At each step, undo the last clustering, yielding two subjets (j_a, j_b)
-2. Identify the harder subjet: the one with larger |p| (or equivalently, larger E for massless particles)
+2. Identify the harder subjet: the one with larger energy E (standard choice for e+e- Lund plane, where energy is the natural hardness variable; this differs from pp where pT is used)
 3. Record the splitting: (Delta_theta, k_T) as defined in Section 2.2
 4. Follow the harder subjet to the next splitting
 5. Continue until the harder subjet has no further substructure (i.e., it is a single particle)
@@ -254,6 +254,8 @@ As the mandatory alternative correction method (conventions/unfolding.md), 2D it
 3. Compare the IBU-corrected result with the bin-by-bin result bin by bin.
 
 The number of IBU iterations will be determined by the trade-off between bias (too few iterations) and variance (too many), assessed via closure and stress tests.
+
+**Response matrix matching strategy [D12]:** The Lund plane has variable multiplicity per event: each hemisphere yields a variable-length primary declustering chain (typically 3-8 splittings). The response matrix maps (gen-level bin) -> (reco-level bin) for individual splittings, NOT for individual hemispheres. The matching strategy is **bin-level, not object-level**: for each MC event, all gen-level primary splittings are histogrammed into their true bins and all reco-level primary splittings into their reco bins. The response matrix element R(i,j) = (number of reco splittings in bin j from events whose gen splittings include bin i) / (total gen splittings in bin i). This is the standard approach for observables with variable sub-object multiplicity (cf. conventions/unfolding.md pitfall on wrong matching for Lund declusterings). Attempting to match "1st reco splitting to 1st gen splitting" would produce an artificially poor response because the declustering chain order is sensitive to soft radiation. The bin-by-bin correction avoids this issue entirely since it operates on bin populations, not matched objects.
 
 ### 6.3 Efficiency Correction
 
@@ -304,15 +306,15 @@ The following table enumerates every required element from `conventions/unfoldin
 
 | Source | Category | Evaluation Method | Expected Magnitude |
 |--------|----------|-------------------|-------------------|
-| **Tracking efficiency** | Detector | Randomly drop 1% of tracks per event (conservative; ALEPH tracking efficiency is ~99%, cds_2876991 quotes 0.7% uncertainty from TPC hit variation). Recompute Lund plane, take difference as systematic | 1-3% (largest at low k_T where soft tracks dominate) |
+| **Tracking efficiency** | Detector | Randomly drop tracks with a per-track probability of 1%, recompute Lund plane, take difference as systematic. Justification for 1%: cds_2876991 measures the tracking efficiency uncertainty as 0.7% from TPC hit requirement variation (varying ntpc from 4 to 7). The per-track inefficiency is larger than the efficiency uncertainty (the total tracking efficiency is ~98-99% per track, cite ALEPH TPC performance); 1% random drop is a conservative envelope on the track-level efficiency uncertainty. The effect on the Lund plane is evaluated by rerunning the full analysis chain (clustering, declustering, correction) on the modified track collection | 1-3% (largest at low k_T where soft tracks dominate) |
 | **Track momentum resolution** | Detector | Smear track momenta by +/-10% of the resolution (sigma_p/p^2 ~ 0.6e-3 (GeV/c)^-1). Recompute Lund plane | < 1% (ALEPH TPC resolution is excellent) |
 | **Angular resolution** | Detector | Smear track angles by +/-1 mrad (ALEPH angular resolution). Effect on Delta_theta | < 0.5% (angular resolution is sub-mrad) |
 | **Track selection cuts** | Selection | Vary p threshold from 150 to 250 MeV/c; vary |d0| from 1.5 to 2.5 cm; vary ntpc from 3 to 5. Envelope of variations | 1-5% (largest at phase space boundaries) |
 | **Event selection cuts** | Selection | Vary thrust cut from 0.6 to 0.8; vary N_ch_min from 4 to 6; vary E_ch_min from 12 to 18 GeV. Evaluate effect on corrected result | 1-3% |
-| **MC model dependence** [dominant] | Correction | Difference between nominal correction (PYTHIA 6.1) and reweighted MC with varied truth shapes. For the cross-check: compare correction factors from two generators | 5-20% (largest in non-perturbative region, k_T < 1 GeV) |
+| **MC model dependence** [dominant] | Correction | Reweight PYTHIA 6.1 gen-level Lund plane to match standalone PYTHIA 8 Monash truth-level shape (2D bin-by-bin reweighting of gen events). Derive new correction factors from the reweighted MC and correct data. The difference between the nominally corrected and reweighted-corrected Lund plane is the MC model systematic. Repeat with HERWIG 7 target shape. Take the envelope of the two reweighting variations as the systematic. This procedure is well-defined because only the gen-level shape changes; the detector response (reco/gen migration) is held fixed from the original PYTHIA 6.1 simulation | 5-20% (largest in non-perturbative region, k_T < 1 GeV) |
 | **Unfolding method** | Correction | Difference between bin-by-bin and IBU corrected results | 1-5% (indicator of model bias if large) |
-| **ISR modelling** | Physics | Toggle ISR on/off in MC. Effect on event selection and hemisphere assignment | < 1% (ISR is a small correction at the Z pole) |
-| **Background contamination** | Physics | Not applicable — backgrounds are < 0.1% after selection (cds_2876991). Assign 0.1% flat systematic as upper bound | < 0.1% |
+| **ISR modelling** | Physics | [L] Cannot toggle ISR in archived PYTHIA 6.1 MC. Instead, assess ISR impact using the MC gen-level information: compare the thrust axis computed from all gen-level charged particles vs the thrust axis excluding pwflag=-11 particles (ISR/material). The shift in hemisphere assignment and Lund plane coordinates quantifies the ISR effect. Additionally, the tgenBefore tree includes ISR photon information that can be used to characterize the ISR energy spectrum. The ISR energy at the Z pole is small (typically < 1 GeV per event) and the effect on the Lund plane is expected to be negligible | < 1% (ISR is a small correction at the Z pole; beamstrahlung energy loss ~0.1% of sqrt(s)) |
+| **Background contamination** | Physics | Not applicable — backgrounds are < 0.1% after selection (cds_2876991). No dedicated systematic assigned; the contamination is orders of magnitude below any other uncertainty source. If needed as a cross-check, subtract estimated tau/two-photon contamination from data and compare corrected Lund plane with and without subtraction | Negligible (< 0.1%, well below statistical precision in any bin) |
 | **Hemisphere assignment** | Observable definition | Compare thrust axis from charged+neutral (energy flow) vs charged-only. Evaluate effect on hemisphere composition and Lund plane | 1-3% |
 | **Jet definition** | Observable definition | Compare Approach A (thrust hemispheres) vs Approach C (kT jets). The difference characterizes sensitivity to jet definition | Cross-check, not a systematic (different observable definitions) |
 
@@ -417,11 +419,11 @@ These will be run at generator level only (no detector simulation) with the same
 
 ### 10.2 Analytical Predictions
 
-The Lund plane density in the perturbative region has a known analytical form at leading order:
+The Lund plane density in the perturbative region has a known analytical form at leading order (Dreyer, Salam, Soyez, JHEP 12 (2018) 064, Eq. 2.6):
 
 rho_LO = (alpha_s * C_F) / pi
 
-For quark-initiated jets (as at the Z pole), C_F = 4/3. This provides a benchmark: the measured density in the perturbative region (high k_T, intermediate angle) should be approximately flat with a value determined by alpha_s.
+For quark-initiated jets (as at the Z pole), C_F = 4/3. This provides a benchmark: the measured density in the perturbative region (high k_T, intermediate angle) should be approximately flat with a value determined by alpha_s. With alpha_s(M_Z) ~ 0.118 (to be fetched from PDG at Phase 4), the expected density is rho_LO ~ 0.118 * (4/3) / pi ~ 0.050. Running of alpha_s across the Lund plane (k_T ranges from ~0.05 GeV to ~55 GeV) will produce a visible tilt that probes the QCD beta function.
 
 Higher-order corrections (NLL resummation) modify this density, particularly at the edges of the plane. Comparisons with analytical calculations (Dreyer, Salam, Soyez) will be pursued if published numerical predictions are available.
 
@@ -453,6 +455,7 @@ Higher-order corrections (NLL resummation) modify this density, particularly at 
 - **[D9]** Cross-check correction: IBU. Matching modern ATLAS/ALICE methodology.
 - **[D10]** ISR/FSR treatment: include all final-state charged particles after FSR; ISR photons excluded.
 - **[D11]** Covariance matrix delivery: statistical (bootstrap N >= 500) + systematic + total. Machine-readable format.
+- **[D12]** Response matrix matching: bin-level population matching (not object-level 1:1 matching) for variable-multiplicity Lund declusterings.
 
 ---
 

@@ -42,3 +42,25 @@
 - No MVA for event selection (justified: no background to reject, event quality is one-dimensional)
 - Second selection approach: exclusive kT jets instead of thrust hemispheres (qualitatively different jet definition)
 - Particle-level definition: charged particles, p > 200 MeV/c, c*tau > 1 cm, full phase space
+
+### Self-critique fixes (Fabiola, 2026-03-25)
+
+**2026-03-25** — Post-completion self-critique identified and corrected 7 issues in the strategy:
+
+1. **Background systematic was flat-assigned.** Removed the 0.1% flat systematic (violates conventions/unfolding.md pitfall on flat estimates). Backgrounds are negligible; no systematic needed. Cross-check by MC subtraction if ever questioned.
+
+2. **MC model dependence procedure was vague.** Replaced "varied truth shapes" with concrete procedure: reweight PYTHIA 6.1 gen-level to match PYTHIA 8 / HERWIG 7 truth-level shapes, derive new correction factors, take envelope.
+
+3. **ISR systematic "toggle ISR on/off" was not implementable.** Cannot toggle ISR in archived MC. Replaced with: compare thrust axis with/without pwflag=-11 particles at gen-level to quantify ISR effect on hemisphere assignment and Lund plane.
+
+4. **Tracking efficiency 1% drop justification was circular.** Added explicit justification: 0.7% is the TPC hit requirement variation; per-track inefficiency is ~1-2%; 1% random drop is a conservative envelope.
+
+5. **"Harder subjet" definition was ambiguous.** Removed misleading "equivalently, larger E for massless particles" (particles are NOT massless). Clarified: use energy E as hardness criterion (standard for e+e-).
+
+6. **Analytical LO formula was uncited.** Added citation: Dreyer, Salam, Soyez, JHEP 12 (2018) 064, Eq. 2.6. Added numerical estimate: rho_LO ~ 0.050.
+
+7. **Approach C y_cut procedure was underspecified.** Added: scan R_2(y_cut) in data and MC in Phase 2; select y_cut where R_2 ~ 80-85%.
+
+8. **Response matrix matching for variable-multiplicity observable was not discussed.** Added [D12]: bin-level population matching, not object-level 1:1 matching, for Lund declusterings. Addresses conventions/unfolding.md pitfall on wrong matching strategy.
+
+9. **Retrieval log was empty.** Populated with all 6 LEP corpus queries, 3 paper drilldowns, and modern methodology search results.

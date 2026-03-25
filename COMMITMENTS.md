@@ -16,11 +16,11 @@ Update at every phase boundary.
 - [ ] Angular resolution: smear angles by +/-1 mrad
 - [ ] Track selection cuts: vary p threshold (150-250 MeV/c), |d0| (1.5-2.5 cm), ntpc (3-5)
 - [ ] Event selection cuts: vary thrust cut (0.6-0.8), N_ch_min (4-6), E_ch_min (12-18 GeV)
-- [ ] MC model dependence: reweighted MC truth shapes + comparison with PYTHIA 8 / HERWIG 7 at particle level
+- [ ] MC model dependence: reweight PYTHIA 6.1 gen-level to match PYTHIA 8 / HERWIG 7 truth shapes; derive new correction factors; envelope of variations
 - [ ] Unfolding method: difference between bin-by-bin and IBU corrected results
-- [ ] ISR modelling: toggle ISR on/off in MC
+- [ ] ISR modelling: compare thrust axis with/without pwflag=-11 particles at gen-level; quantify shift in Lund plane
 - [ ] Hemisphere assignment: charged+neutral vs charged-only thrust axis
-- [ ] Background contamination: assign 0.1% flat systematic (upper bound, backgrounds negligible)
+- [ ] Background contamination: negligible (<0.1%); no flat systematic assigned. Cross-check by MC subtraction if needed
 - [ ] Covariance matrix: statistical (bootstrap, N >= 500), systematic (per source), total. Machine-readable format. PSD verified
 
 ## Validation tests
