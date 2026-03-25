@@ -1,0 +1,9 @@
+{
+  "n_populated_bins": 58,
+  "ratio_mean": 1.0050109896975898,
+  "ratio_std": 0.10460294922747725,
+  "max_significance": 34.01746004922682,
+  "bins_gt_3sigma": 34,
+  "bins_gt_2sigma": 43,
+  "gate_pass": true
+}

@@ -1,0 +1,17 @@
+{
+  "test": "bin_by_bin_closure",
+  "chi2": 1.1530203686264617e-26,
+  "ndf": 58,
+  "chi2_ndf": 1.9879661528042445e-28,
+  "p_value": 1.0,
+  "passes": true,
+  "alarm": "suspiciously_good_expected_for_algebraic_identity",
+  "pull_mean": 4.884641034582726e-16,
+  "pull_std": 1.4091061638501804e-14,
+  "pull_max_abs": 7.698312172237821e-14,
+  "ratio_mean": 1.0,
+  "ratio_std": 5.2561519189753194e-17,
+  "n_populated_bins": 58,
+  "n_total_bins": 100,
+  "note": "Bin-by-bin closure is algebraically exact: corrected = reco * (genBefore/reco) = genBefore. Deviations only from bins with N_reco=0. Split-sample closure (real test) in Phase 4."
+}

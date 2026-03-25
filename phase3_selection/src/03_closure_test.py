@@ -69,17 +69,19 @@ def main():
     bin_area = np.outer(dx, dy)
 
     # === Corrected reco density ===
-    # Apply correction: N_corrected = N_reco * C
-    n_corrected = h2d_reco * correction  # Should be = h2d_genBefore where C is defined
-    rho_corrected = n_corrected / (n_hemi_reco * bin_area)
+    # Apply correction: N_corrected = N_reco * C = N_reco * (N_genBefore/N_reco) = N_genBefore
+    # The corrected counts are at the genBefore level, so normalize by N_hemi_genBefore
+    # (the correction already accounts for efficiency, pushing reco counts to pre-selection gen).
+    n_corrected = h2d_reco * correction
+    rho_corrected = n_corrected / (n_hemi_genBefore * bin_area)
 
     # Statistical uncertainty on corrected result
     # Poisson on N_reco, propagated through C
-    # sigma_corrected = sqrt(N_reco) * C = sqrt(N_reco) * N_genBefore / N_reco
+    # sigma_corrected = sqrt(N_reco) * C
     sigma_n_corrected = np.zeros_like(n_corrected)
     mask = h2d_reco > 0
     sigma_n_corrected[mask] = np.sqrt(h2d_reco[mask]) * correction[mask]
-    rho_corrected_err = sigma_n_corrected / (n_hemi_reco * bin_area)
+    rho_corrected_err = sigma_n_corrected / (n_hemi_genBefore * bin_area)
 
     # === Truth density (genBefore) ===
     rho_truth = h2d_genBefore / (n_hemi_genBefore * bin_area)

@@ -1,0 +1,14 @@
+{
+  "correction_mean": 1.6800878777792265,
+  "correction_median": 1.468179316012315,
+  "correction_min": 1.1659431137724552,
+  "correction_max": 6.666666666666667,
+  "bins_c_gt_2": 4,
+  "bins_c_lt_0.5": 0,
+  "bins_reco_zero": 42,
+  "efficiency_mean": 0.7314535130962714,
+  "efficiency_min": 0.0,
+  "efficiency_max": 0.9,
+  "diag_fraction_mean": 0.8359794131923808,
+  "diag_fraction_gt_0.5": 57
+}
