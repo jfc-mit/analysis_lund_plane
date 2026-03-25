@@ -1,0 +1,91 @@
+✨ Pixi task (py): python phase3_selection/src/04_approach_comparison.py
+[03/25/26 18:48:14] INFO     ===================== 04_approach_comparison.py:154
+                             =====================                              
+                             =====================                              
+                             =======                                            
+                    INFO     Phase 3 Script 04:    04_approach_comparison.py:155
+                             Approach A vs C                                    
+                             Comparison                                         
+                    INFO     Session: Ingrid       04_approach_comparison.py:156
+                    INFO     ===================== 04_approach_comparison.py:157
+                             =====================                              
+                             =====================                              
+                             =======                                            
+                    INFO     Processing            04_approach_comparison.py:177
+                             LEP1Data1992_recons_a                              
+                             ftercut-MERGED.root                                
+                             (up to 200000                                      
+                             events)...                                         
+[03/25/26 18:48:16] INFO       186435 events       04_approach_comparison.py:217
+                             selected                                           
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+[03/25/26 18:50:58] INFO         50000/186435      04_approach_comparison.py:249
+                             events done                                        
+[03/25/26 18:53:41] INFO         100000/186435     04_approach_comparison.py:249
+                             events done                                        
+[03/25/26 18:56:25] INFO         150000/186435     04_approach_comparison.py:249
+                             events done                                        
+[03/25/26 18:58:24] INFO     Processing            04_approach_comparison.py:177
+                             LEP1Data1993_recons_a                              
+                             ftercut-MERGED.root                                
+                             (up to 13565                                       
+                             events)...                                         
+[03/25/26 18:58:25] INFO       12722 events        04_approach_comparison.py:217
+                             selected                                           
+[03/25/26 18:59:06] INFO     Processing            04_approach_comparison.py:177
+                             LEP1Data1994P1_recons                              
+                             _aftercut-MERGED.root                              
+                              (up to 843                                        
+                             events)...                                         
+                    INFO       772 events selected 04_approach_comparison.py:217
+[03/25/26 18:59:08] INFO     Processing            04_approach_comparison.py:177
+                             LEP1Data1994P2_recons                              
+                             _aftercut-MERGED.root                              
+                              (up to 71 events)...                              
+                    INFO       68 events selected  04_approach_comparison.py:217
+[03/25/26 18:59:09] INFO     Processing            04_approach_comparison.py:177
+                             LEP1Data1994P3_recons                              
+                             _aftercut-MERGED.root                              
+                              (up to 3 events)...                               
+                    INFO       3 events selected   04_approach_comparison.py:217
+                    INFO                           04_approach_comparison.py:252
+                             Processed 200000                                   
+                             events in 654.8s                                   
+                    INFO     Approach A: 400000    04_approach_comparison.py:253
+                             hemispheres, 1720619                               
+                             splittings                                         
+                    INFO     Approach C: 400000    04_approach_comparison.py:255
+                             jets, 1724117                                      
+                             splittings                                         
+                    INFO                           04_approach_comparison.py:271
+                             --- Approach                                       
+                             comparison ---                                     
+                    INFO     Ratio (C/A)           04_approach_comparison.py:272
+                             statistics in                                      
+                             populated bins:                                    
+                    INFO       Mean: 0.9992        04_approach_comparison.py:273
+                    INFO       Std: 0.0100         04_approach_comparison.py:274
+                    INFO       Min: 0.9327         04_approach_comparison.py:275
+                    INFO       Max: 1.0070         04_approach_comparison.py:276
+                    INFO     Chi2 (A vs C): 10.6 / 04_approach_comparison.py:287
+                             57 = 0.185                                         
+                    INFO                           04_approach_comparison.py:326
+                             Saved approach                                     
+                             comparison to                                      
+                             /n/home07/anovak/work                              
+                             /slopspec/analyses/lu                              
+                             nd_jet_plane/phase3_s                              
+                             election/outputs                                   
+                    INFO     Done.                 04_approach_comparison.py:327

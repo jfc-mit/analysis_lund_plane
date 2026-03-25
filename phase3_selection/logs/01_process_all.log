@@ -1,0 +1,571 @@
+✨ Pixi task (py): python phase3_selection/src/01_process_all.py
+[03/25/26 18:13:29] INFO     ============================= 01_process_all.py:332
+                             =============================                      
+                             ============                                       
+                    INFO     Phase 3 Script 01: Full Event 01_process_all.py:333
+                             Selection + Lund Plane                             
+                             Construction                                       
+                    INFO     Session: Ingrid               01_process_all.py:334
+                    INFO     ============================= 01_process_all.py:335
+                             =============================                      
+                             ============                                       
+                    INFO     Found 6 data files, 40 MC     01_process_all.py:339
+                             files                                              
+                    INFO                                   01_process_all.py:345
+                             --- PRODUCTION: 6 data + 40                        
+                             MC files (workers=8) ---                           
+                    INFO                                   01_process_all.py:349
+                             Processing ALL MC files...                         
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             1.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             2.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             3.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             4.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             5.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             6.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             7.root                                             
+[03/25/26 18:13:32] INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             8.root                                             
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+[03/25/26 18:15:36] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             006.root: reco 17916/19206,                        
+                             gen 19113/19206, genB                              
+                             24233/24356 (124.3s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-00                      
+                             9.root                                             
+[03/25/26 18:15:37] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             004.root: reco 17959/19193,                        
+                             gen 19092/19193, genB                              
+                             24184/24317 (124.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             0.root                                             
+[03/25/26 18:15:37] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             002.root: reco 18197/19470,                        
+                             gen 19366/19470, genB                              
+                             24205/24333 (124.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             1.root                                             
+[03/25/26 18:15:37] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             001.root: reco 17891/19158,                        
+                             gen 19062/19158, genB                              
+                             24229/24360 (125.1s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             2.root                                             
+[03/25/26 18:15:38] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             003.root: reco 18120/19378,                        
+                             gen 19287/19378, genB                              
+                             24204/24326 (125.6s)                               
+[03/25/26 18:15:38] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             005.root: reco 18083/19369,                        
+                             gen 19245/19369, genB                              
+                             24168/24326 (125.6s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             3.root                                             
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             4.root                                             
+[03/25/26 18:15:38] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             008.root: reco 18072/19335,                        
+                             gen 19228/19335, genB                              
+                             24223/24370 (125.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             5.root                                             
+[03/25/26 18:15:38] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             007.root: reco 18054/19337,                        
+                             gen 19237/19337, genB                              
+                             24235/24366 (125.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             6.root                                             
+[03/25/26 18:17:41] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             009.root: reco 18004/19285,                        
+                             gen 19173/19285, genB                              
+                             24175/24328 (124.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             7.root                                             
+[03/25/26 18:17:41] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             011.root: reco 18027/19262,                        
+                             gen 19166/19262, genB                              
+                             24214/24338 (124.3s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             8.root                                             
+[03/25/26 18:17:41] INFO       MC progress: 10/40 files    01_process_all.py:379
+                             done                                               
+[03/25/26 18:17:42] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             014.root: reco 18118/19370,                        
+                             gen 19247/19370, genB                              
+                             24211/24371 (124.2s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-01                      
+                             9.root                                             
+[03/25/26 18:17:42] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             010.root: reco 17903/19171,                        
+                             gen 19083/19171, genB                              
+                             24180/24295 (125.2s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             0.root                                             
+[03/25/26 18:17:42] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             015.root: reco 17987/19246,                        
+                             gen 19145/19246, genB                              
+                             24218/24356 (124.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             1.root                                             
+[03/25/26 18:17:43] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             013.root: reco 18078/19359,                        
+                             gen 19258/19359, genB                              
+                             24246/24385 (125.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             2.root                                             
+[03/25/26 18:17:44] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             016.root: reco 18049/19340,                        
+                             gen 19233/19340, genB                              
+                             24196/24342 (126.1s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             3.root                                             
+[03/25/26 18:18:03] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             012.root: reco 18022/19304,                        
+                             gen 19192/19304, genB                              
+                             24212/24357 (145.8s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             4.root                                             
+[03/25/26 18:19:49] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             017.root: reco 18030/19345,                        
+                             gen 19246/19345, genB                              
+                             24219/24343 (127.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             5.root                                             
+[03/25/26 18:19:49] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             018.root: reco 18146/19437,                        
+                             gen 19321/19437, genB                              
+                             24205/24339 (127.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             6.root                                             
+[03/25/26 18:19:49] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             019.root: reco 18039/19288,                        
+                             gen 19200/19288, genB                              
+                             24235/24356 (127.2s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             7.root                                             
+[03/25/26 18:19:49] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             021.root: reco 18008/19268,                        
+                             gen 19141/19268, genB                              
+                             24161/24320 (126.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             8.root                                             
+[03/25/26 18:19:49] INFO       MC progress: 20/40 files    01_process_all.py:379
+                             done                                               
+[03/25/26 18:19:50] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             020.root: reco 18063/19236,                        
+                             gen 19149/19236, genB                              
+                             24207/24328 (128.5s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-02                      
+                             9.root                                             
+[03/25/26 18:19:51] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             022.root: reco 18003/19295,                        
+                             gen 19192/19295, genB                              
+                             24211/24340 (127.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             0.root                                             
+[03/25/26 18:19:52] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             023.root: reco 17952/19208,                        
+                             gen 19085/19208, genB                              
+                             24188/24341 (127.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             1.root                                             
+[03/25/26 18:20:11] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             024.root: reco 18005/19289,                        
+                             gen 19186/19289, genB                              
+                             24181/24323 (127.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             2.root                                             
+[03/25/26 18:21:56] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             028.root: reco 17896/19198,                        
+                             gen 19077/19198, genB                              
+                             24195/24338 (126.4s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             3.root                                             
+[03/25/26 18:21:56] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             026.root: reco 18028/19290,                        
+                             gen 19162/19290, genB                              
+                             24191/24346 (127.1s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             4.root                                             
+[03/25/26 18:21:56] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             027.root: reco 17922/19181,                        
+                             gen 19077/19181, genB                              
+                             24184/24330 (127.0s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             5.root                                             
+[03/25/26 18:21:57] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             025.root: reco 17978/19231,                        
+                             gen 19127/19231, genB                              
+                             24251/24389 (127.9s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             6.root                                             
+[03/25/26 18:21:59] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             029.root: reco 18043/19302,                        
+                             gen 19197/19302, genB                              
+                             24175/24317 (128.7s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             7.root                                             
+[03/25/26 18:22:00] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             031.root: reco 18002/19261,                        
+                             gen 19161/19261, genB                              
+                             24234/24365 (128.2s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             8.root                                             
+[03/25/26 18:22:00] INFO       MC progress: 30/40 files    01_process_all.py:379
+                             done                                               
+[03/25/26 18:22:00] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             030.root: reco 18071/19338,                        
+                             gen 19238/19338, genB                              
+                             24233/24367 (129.0s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-03                      
+                             9.root                                             
+[03/25/26 18:22:19] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             032.root: reco 18064/19290,                        
+                             gen 19195/19290, genB                              
+                             24232/24356 (128.5s)                               
+                    INFO     MC:                           01_process_all.py:254
+                             LEP1MC1994_recons_aftercut-04                      
+                             0.root                                             
+[03/25/26 18:24:02] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             033.root: reco 17988/19249,                        
+                             gen 19132/19249, genB                              
+                             24207/24364 (126.0s)                               
+[03/25/26 18:24:03] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             035.root: reco 18065/19275,                        
+                             gen 19186/19275, genB                              
+                             24221/24347 (126.7s)                               
+[03/25/26 18:24:03] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             036.root: reco 17919/19190,                        
+                             gen 19095/19190, genB                              
+                             24225/24349 (126.5s)                               
+[03/25/26 18:24:03] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             034.root: reco 18060/19281,                        
+                             gen 19194/19281, genB                              
+                             24217/24330 (127.4s)                               
+[03/25/26 18:24:06] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             039.root: reco 18079/19320,                        
+                             gen 19211/19320, genB                              
+                             24195/24340 (126.3s)                               
+[03/25/26 18:24:07] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             037.root: reco 18013/19234,                        
+                             gen 19142/19234, genB                              
+                             24200/24325 (127.5s)                               
+[03/25/26 18:24:08] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             038.root: reco 18264/19512,                        
+                             gen 19415/19512, genB                              
+                             24221/24348 (128.4s)                               
+[03/25/26 18:24:26] INFO       LEP1MC1994_recons_aftercut- 01_process_all.py:305
+                             040.root: reco 18057/19296,                        
+                             gen 19209/19296, genB                              
+                             24235/24342 (127.0s)                               
+[03/25/26 18:24:26] INFO       MC progress: 40/40 files    01_process_all.py:379
+                             done                                               
+                    INFO                                   01_process_all.py:382
+                             MC total: 657.0s                                   
+                    INFO     MC reco: 1442350 hemispheres, 01_process_all.py:383
+                             7405085 splittings                                 
+                    INFO     MC gen: 1534930 hemispheres,  01_process_all.py:384
+                             8352333 splittings                                 
+                    INFO     MC genBefore: 1936712         01_process_all.py:385
+                             hemispheres, 10514849                              
+                             splittings                                         
+                    INFO                                   01_process_all.py:389
+                             Processing ALL data files...                       
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1992_recons_aftercut-                      
+                             MERGED.root                                        
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1994P1_recons_aftercu                      
+                             t-MERGED.root                                      
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1993_recons_aftercut-                      
+                             MERGED.root                                        
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1994P2_recons_aftercu                      
+                             t-MERGED.root                                      
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1994P3_recons_aftercu                      
+                             t-MERGED.root                                      
+[03/25/26 18:24:26] INFO     DATA:                         01_process_all.py:215
+                             LEP1Data1995_recons_aftercut-                      
+                             MERGED.root                                        
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.5.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           https://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code,
+# CGAL and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+[03/25/26 18:38:13] INFO       LEP1Data1994P1_recons_after 01_process_all.py:236
+                             cut-MERGED.root: 433947                            
+                             events -> 408028 selected ->                       
+                             404768 hemi-cut -> 809536                          
+                             hemi, 4110071 splits (826.7s)                      
+[03/25/26 18:38:50] INFO       LEP1Data1994P2_recons_after 01_process_all.py:236
+                             cut-MERGED.root: 447844                            
+                             events -> 421031 selected ->                       
+                             417796 hemi-cut -> 835592                          
+                             hemi, 4248104 splits (863.6s)                      
+[03/25/26 18:39:50] INFO       LEP1Data1994P3_recons_after 01_process_all.py:236
+                             cut-MERGED.root: 483649                            
+                             events -> 454563 selected ->                       
+                             451048 hemi-cut -> 902096                          
+                             hemi, 4583076 splits (923.4s)                      
+[03/25/26 18:41:48] INFO       LEP1Data1993_recons_aftercu 01_process_all.py:236
+                             t-MERGED.root: 538601 events                       
+                             -> 506313 selected -> 502452                       
+                             hemi-cut -> 1004904 hemi,                          
+                             5109631 splits (1042.0s)                           
+[03/25/26 18:42:09] INFO       LEP1Data1992_recons_aftercu 01_process_all.py:236
+                             t-MERGED.root: 551474 events                       
+                             -> 518770 selected -> 514820                       
+                             hemi-cut -> 1029640 hemi,                          
+                             5239636 splits (1062.7s)                           
+[03/25/26 18:43:29] INFO       LEP1Data1995_recons_aftercu 01_process_all.py:236
+                             t-MERGED.root: 595095 events                       
+                             -> 559679 selected -> 555310                       
+                             hemi-cut -> 1110620 hemi,                          
+                             5644274 splits (1143.0s)                           
+[03/25/26 18:43:30] INFO                                   01_process_all.py:406
+                             Data total: 1143.2s                                
+                    INFO     Data: 5692388 hemispheres,    01_process_all.py:407
+                             28934792 splittings                                
+                    INFO                                   01_process_all.py:410
+                             Saving results...                                  
+                    INFO     All results saved to          01_process_all.py:481
+                             /n/home07/anovak/work/slopspe                      
+                             c/analyses/lund_jet_plane/pha                      
+                             se3_selection/outputs                              
+                    INFO                                   01_process_all.py:482
+                             === SUMMARY ===                                    
+                    INFO     Data: 5692388 hemispheres,    01_process_all.py:483
+                             28934792 splittings (5.08                          
+                             splits/hemi)                                       
+                    INFO     MC reco: 1442350 hemispheres, 01_process_all.py:485
+                             7405085 splittings (5.13                           
+                             splits/hemi)                                       
+                    INFO     MC gen: 1534930 hemispheres,  01_process_all.py:488
+                             8352333 splittings (5.44                           
+                             splits/hemi)                                       
+                    INFO     MC genBefore: 1936712         01_process_all.py:491
+                             hemispheres, 10514849                              
+                             splittings (5.43 splits/hemi)                      
