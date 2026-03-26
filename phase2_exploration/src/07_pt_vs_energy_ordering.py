@@ -194,7 +194,6 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins, y_bins, ratio.T, cmap="coolwarm", shading="flat",
                        vmin=0.7, vmax=1.3)
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho_{\mathrm{energy}} / \rho_{p_T}$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

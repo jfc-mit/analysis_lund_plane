@@ -101,7 +101,6 @@ def main():
     rho_plot = rho_data.copy()
     rho_plot[rho_plot == 0] = np.nan
     im = ax.pcolormesh(x_edges, y_edges, rho_plot.T, cmap="viridis", shading="flat")
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -120,7 +119,6 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, ratio.T, cmap="RdBu_r",
                        vmin=0.7, vmax=1.3, shading="flat")
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="10% Data / Expected")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -140,7 +138,6 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, pull_plot.T, cmap="RdBu_r",
                        vmin=-3, vmax=3, shading="flat")
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"Pull = (Data $-$ Expected) / $\sigma$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -168,7 +165,6 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, ratio_reco.T, cmap="RdBu_r",
                        vmin=0.8, vmax=1.2, shading="flat")
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Data (10%) / MC (reco level)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

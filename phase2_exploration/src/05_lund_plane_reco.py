@@ -221,7 +221,6 @@ def main():
     import matplotlib.colors as mcolors
     im = ax.pcolormesh(xedges, yedges, rho_plot.T, cmap="inferno", shading="flat",
                        norm=mcolors.LogNorm(vmin=1e-3, vmax=rho_plot.max()))
-    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
