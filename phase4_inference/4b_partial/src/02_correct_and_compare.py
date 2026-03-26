@@ -199,7 +199,7 @@ def plot_corrected_lund_plane(rho_data, inputs):
     rho_plot[rho_plot == 0] = np.nan
 
     im = ax.pcolormesh(x_edges, y_edges, rho_plot.T, cmap="viridis", shading="flat")
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -232,7 +232,7 @@ def plot_ratio_to_expected(rho_data, inputs):
 
     im = ax.pcolormesh(x_edges, y_edges, ratio.T, cmap="RdBu_r",
                        vmin=0.7, vmax=1.3, shading="flat")
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="10% Data / Expected")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -264,7 +264,7 @@ def plot_pull_map(comparison):
 
     im = ax.pcolormesh(x_edges, y_edges, pull_plot.T, cmap="RdBu_r",
                        vmin=-3, vmax=3, shading="flat")
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Pull = (Data - Expected) / $\\sigma$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

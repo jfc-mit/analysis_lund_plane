@@ -543,7 +543,7 @@ def main():
     rp = rho_bbb.copy()
     rp[rp == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, rp.T, cmap="viridis", shading="flat")
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -558,7 +558,7 @@ def main():
     cp[cp == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, cp.T, cmap="RdYlBu_r", shading="flat",
                        vmin=0.8, vmax=3.0)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$C(i,j)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -727,7 +727,7 @@ def main():
     df = diag_frac.reshape(NX, NY).copy()
     df[df == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, df.T, cmap="RdYlGn", shading="flat", vmin=0, vmax=1)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Diagonal fraction")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

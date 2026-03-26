@@ -251,7 +251,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, h_reco.T, cmap="viridis",
                        shading="flat", norm=mcolors.LogNorm(vmin=1, vmax=h_reco.max()))
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Entries per bin (reco)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -273,7 +273,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, migration_fraction.T, cmap="RdYlBu_r",
                        shading="flat", vmin=0, vmax=1)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$|N_{\mathrm{reco}} - N_{\mathrm{gen}}| / N_{\mathrm{reco}}$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -332,7 +332,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, correction.T, cmap="coolwarm",
                        shading="flat", vmin=0.5, vmax=1.5)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$N_{\mathrm{gen}} / N_{\mathrm{reco}}$ (post-selection)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

@@ -100,7 +100,7 @@ def plot_data_mc_ratio_2d(inputs):
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, ratio.T, cmap="RdBu_r",
                        vmin=0.8, vmax=1.2, shading="flat")
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Data (10%) / MC (reco level)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")

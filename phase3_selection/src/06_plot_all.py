@@ -57,7 +57,7 @@ def plot_2d_lund(h2d, n_hemi, x_edges, y_edges, name, label="Open Data"):
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, rho_plot.T, cmap="inferno", shading="flat",
                        norm=mcolors.LogNorm(vmin=1e-3, vmax=max(rho_plot.max(), 1e-2)))
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -163,7 +163,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, ratio_2d_plot.T, cmap="RdBu_r",
                        shading="flat", vmin=0.8, vmax=1.2)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Data / MC")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -206,7 +206,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, c_plot.T, cmap="viridis", shading="flat",
                        vmin=0.5, vmax=3.0)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$C(i,j) = N_\mathrm{genBefore} / N_\mathrm{reco}$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -220,7 +220,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, df_plot.T, cmap="RdYlGn", shading="flat",
                        vmin=0, vmax=1.0)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Diagonal fraction (approximate)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
@@ -234,7 +234,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_edges, y_edges, eff_plot.T, cmap="viridis", shading="flat",
                        vmin=0.5, vmax=1.0)
-    ax.set_aspect("equal")
+    ax.set_box_aspect(1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax,
                  label=r"$\varepsilon(i,j) = N_\mathrm{gen} / N_\mathrm{genBefore}$")
@@ -320,7 +320,7 @@ def main():
         fig, ax = plt.subplots(figsize=(10, 10))
         im = ax.pcolormesh(x_edges, y_edges, ratio_ac_plot.T, cmap="RdBu_r",
                            shading="flat", vmin=0.7, vmax=1.3)
-        ax.set_aspect("equal")
+        ax.set_box_aspect(1)
         cax = mh.utils.make_square_add_cbar(ax)
         fig.colorbar(im, cax=cax,
                      label=r"$\rho_\mathrm{kT\,2-jet}$ / $\rho_\mathrm{hemisphere}$")
