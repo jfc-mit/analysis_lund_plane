@@ -1,0 +1,66 @@
+{
+  "seed": 42,
+  "fraction": 0.1,
+  "per_file": [
+    {
+      "file": "LEP1Data1992_recons_aftercut-MERGED.root",
+      "total": 551474,
+      "subsample_10pct": 55147,
+      "after_selection": 51895,
+      "after_hemi_cut": 51486,
+      "hemispheres": 102972,
+      "splittings": 523199
+    },
+    {
+      "file": "LEP1Data1993_recons_aftercut-MERGED.root",
+      "total": 538601,
+      "subsample_10pct": 53860,
+      "after_selection": 50587,
+      "after_hemi_cut": 50208,
+      "hemispheres": 100416,
+      "splittings": 510222
+    },
+    {
+      "file": "LEP1Data1994P1_recons_aftercut-MERGED.root",
+      "total": 433947,
+      "subsample_10pct": 43394,
+      "after_selection": 40757,
+      "after_hemi_cut": 40437,
+      "hemispheres": 80874,
+      "splittings": 410725
+    },
+    {
+      "file": "LEP1Data1994P2_recons_aftercut-MERGED.root",
+      "total": 447844,
+      "subsample_10pct": 44784,
+      "after_selection": 42121,
+      "after_hemi_cut": 41835,
+      "hemispheres": 83670,
+      "splittings": 425957
+    },
+    {
+      "file": "LEP1Data1994P3_recons_aftercut-MERGED.root",
+      "total": 483649,
+      "subsample_10pct": 48364,
+      "after_selection": 45591,
+      "after_hemi_cut": 45237,
+      "hemispheres": 90474,
+      "splittings": 460250
+    },
+    {
+      "file": "LEP1Data1995_recons_aftercut-MERGED.root",
+      "total": 595095,
+      "subsample_10pct": 59509,
+      "after_selection": 55976,
+      "after_hemi_cut": 55533,
+      "hemispheres": 111066,
+      "splittings": 565425
+    }
+  ],
+  "total_events_raw": 3050610,
+  "total_subsample": 305058,
+  "total_selected": 286927,
+  "total_hemi_cut": 284736,
+  "total_hemispheres": 569472,
+  "total_splittings": 2895778
+}
