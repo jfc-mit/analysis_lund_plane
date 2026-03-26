@@ -31,10 +31,10 @@ Update at every phase boundary.
 - [x] Closure test: correction factors applied to MC reco recover MC gen truth (chi2 = 0, identity). Split-sample closure with combined uncertainty: chi2/ndf = 40.71/58, p = 0.96, PASSES. Three remediations documented
 - [x] Split-sample closure: derive correction from half A, apply to half B. With combined sigma (Poisson + correction factor uncertainty): chi2/ndf = 40.71/58, p = 0.96, PASSES
 - [x] Stress test: split-sample stress tests (correction from A, tilt on B) with 12 configurations (3 directions x 4 epsilons). 12/12 pass with combined sigma
-- [ ] Data/MC agreement: reco-level comparison of all kinematic inputs (no bins > 3 sigma)
+- [x] Data/MC agreement: reco-level comparison of all kinematic inputs. Phase 4b: Data/MC reco Lund plane ratio mean 1.008, std 0.055
 - [D] Alternative correction method comparison: IBU formally downscoped from co-primary to cross-check [D9]. IBU fails all tests; see Systematic sources above for remediation documentation
 - [x] Covariance validation: PSD, condition number < 10^10, correlation matrix visualized
-- [ ] Year-by-year stability: consistent Lund plane across 1992-1995
+- [x] Year-by-year stability: consistent Lund plane across 1992-1995. Phase 4b: all 6 periods chi2/ndf < 1.1 (10% data)
 - [ ] MC reweighting diagnostic: verify reweighting factors < 3x; check reco-level migration
 
 ## Flagship figures

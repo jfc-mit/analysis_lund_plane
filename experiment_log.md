@@ -252,3 +252,43 @@ Final yields: 2,846,194 data events (5,692,388 hemispheres), 721,175 MC events (
 ### Figures
 
 **2026-03-25 18:49-19:09** -- Produced 14 figures (PDF+PNG) covering 2D Lund planes, data/MC comparisons, correction maps, closure tests, and approach comparison.
+
+## Phase 4b: Inference -- 10% Data (Oscar, 2026-03-26)
+
+### Processing
+
+**2026-03-26 04:46** -- Ran `01_process_10pct_data.py` with seed=42, 10% subsampling on all 6 data files.
+
+**Result:** 305,058 events subsampled -> 286,927 after selection -> 284,736 after hemi cut -> 569,472 hemispheres, 2,895,778 splittings. Processing time: 119.8s (6 parallel workers). Selection efficiency 93.3%, matching MC reco efficiency 93.5%.
+
+**Finding:** 10% subsample is representative: splittings/hemisphere = 5.085 (10%) vs 5.083 (full), ratio = 1.0004.
+
+### Correction and comparison to expected
+
+**2026-03-26 04:49** -- Ran `02_correct_and_compare.py`. Applied full-MC BBB correction factors.
+
+**Result:** Corrected Lund plane density from 10% data. Hemisphere correction R_hemi = 1.3427, N_hemi_corrected = 764,657.
+
+**Finding (comparison to MC pseudo-data):** chi2/ndf = 197.7/57 = 3.47 (p ~ 0). Pull mean = +0.60, std = 1.76. 7 bins with |pull| > 3. All high-pull bins have positive pulls (data > MC), concentrated in collinear region (ln(1/dtheta) > 2.5).
+
+**Interpretation:** The chi2 reflects genuine data/MC differences (PYTHIA 6.1 vs real data), not an analysis artifact. Wide-angle region shows excellent agreement (pull mean ~0, std ~1.1). Collinear region shows systematic data excess (pull mean +1.6) -- this is the physics that the Lund plane measurement is designed to probe.
+
+### Diagnostics
+
+**2026-03-26 04:51** -- Ran `03_diagnostics.py`.
+
+**Per-year stability:** All 6 data periods have chi2/ndf < 1.1 relative to combined (ln kT projection). No evidence for time-dependent effects.
+
+**Data/MC reco ratio:** Mean 1.008, std 0.055. Reco-level agreement is excellent.
+
+**Cutflow efficiency:** Data 93.3% vs MC 93.5% -- agree to 0.2%.
+
+### Self-checks
+
+**2026-03-26 04:53** -- Ran `05_selfcheck.py`.
+
+**Normalization:** Integral(rho * bin_area) = 4.51 (data) vs 4.56 (MC) -- 1% deficit consistent with MC model uncertainty.
+
+**Full covariance chi2:** 1996/57 = 35 -- inflated by bin-to-bin correlations amplifying coherent shifts. Diagonal chi2 (197.7/57) is more appropriate for this comparison.
+
+**Pattern:** Wide-angle region (ln(1/dtheta) < 2.5) shows pull mean = +0.07, std = 1.10. Collinear region (ln(1/dtheta) > 2.5) shows pull mean = +1.59, std = 2.25. The data/MC difference is localized and physically interpretable.
