@@ -251,7 +251,8 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, h_reco.T, cmap="viridis",
                        shading="flat", norm=mcolors.LogNorm(vmin=1, vmax=h_reco.max()))
-    cax = mh.plot.append_axes(ax, size="5%", pad=0.05)
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Entries per bin (reco)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T / \mathrm{GeV})$")
@@ -272,7 +273,8 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, migration_fraction.T, cmap="RdYlBu_r",
                        shading="flat", vmin=0, vmax=1)
-    cax = mh.plot.append_axes(ax, size="5%", pad=0.05)
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$|N_{\mathrm{reco}} - N_{\mathrm{gen}}| / N_{\mathrm{reco}}$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T / \mathrm{GeV})$")
@@ -330,7 +332,8 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     im = ax.pcolormesh(x_bins_10, y_bins_10, correction.T, cmap="coolwarm",
                        shading="flat", vmin=0.5, vmax=1.5)
-    cax = mh.plot.append_axes(ax, size="5%", pad=0.05)
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label=r"$N_{\mathrm{gen}} / N_{\mathrm{reco}}$ (post-selection)")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T / \mathrm{GeV})$")
