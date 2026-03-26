@@ -149,7 +149,8 @@ def main():
     resp_plot[resp_plot == 0] = np.nan
     im = ax.imshow(resp_plot, cmap="Blues", aspect="equal", origin="lower",
                    vmin=0, vmax=0.5)
-    cbar = fig.colorbar(im, ax=ax, label="Migration probability", shrink=0.8)
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Migration probability")
     ax.set_xlabel("Reco bin (flat index)")
     ax.set_ylabel("Gen bin (flat index)")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -323,7 +324,8 @@ def main():
         fig, ax = plt.subplots(figsize=(10, 10))
         im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
                        vmin=-1, vmax=1)
-        cbar = fig.colorbar(im, ax=ax, label="Correlation coefficient", shrink=0.8)
+        cax = mh.utils.make_square_add_cbar(ax)
+        fig.colorbar(im, cax=cax, label="Correlation coefficient")
         ax.set_xlabel("Bin index (flat)")
         ax.set_ylabel("Bin index (flat)")
         mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -431,7 +433,8 @@ def main():
         fig, ax = plt.subplots(figsize=(10, 10))
         im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
                        vmin=-1, vmax=1)
-        cbar = fig.colorbar(im, ax=ax, label="Correlation coefficient", shrink=0.8)
+        cax = mh.utils.make_square_add_cbar(ax)
+        fig.colorbar(im, cax=cax, label="Correlation coefficient")
         ax.set_xlabel("Bin index (flat)")
         ax.set_ylabel("Bin index (flat)")
         mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",

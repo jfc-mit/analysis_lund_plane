@@ -543,7 +543,9 @@ def main():
     rp = rho_bbb.copy()
     rp[rp == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, rp.T, cmap="viridis", shading="flat")
-    fig.colorbar(im, ax=ax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -556,7 +558,9 @@ def main():
     cp[cp == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, cp.T, cmap="RdYlBu_r", shading="flat",
                        vmin=0.8, vmax=3.0)
-    fig.colorbar(im, ax=ax, label=r"$C(i,j)$")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label=r"$C(i,j)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -663,9 +667,10 @@ def main():
 
     # Fig 7: Correlation matrix
     fig, ax = plt.subplots(figsize=(10, 10))
-    im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="auto", origin="lower",
+    im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
                    vmin=-1, vmax=1)
-    fig.colorbar(im, ax=ax, label="Correlation")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Correlation")
     ax.set_xlabel("Bin index")
     ax.set_ylabel("Bin index")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -708,8 +713,9 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     r_plot = response.copy()
     r_plot[r_plot == 0] = np.nan
-    im = ax.imshow(r_plot, cmap="Blues", aspect="auto", origin="lower", vmin=0, vmax=0.5)
-    fig.colorbar(im, ax=ax, label="Migration probability")
+    im = ax.imshow(r_plot, cmap="Blues", aspect="equal", origin="lower", vmin=0, vmax=0.5)
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Migration probability")
     ax.set_xlabel("Reco bin")
     ax.set_ylabel("Gen bin")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -721,7 +727,9 @@ def main():
     df = diag_frac.reshape(NX, NY).copy()
     df[df == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, df.T, cmap="RdYlGn", shading="flat", vmin=0, vmax=1)
-    fig.colorbar(im, ax=ax, label="Diagonal fraction")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Diagonal fraction")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",

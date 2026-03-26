@@ -113,7 +113,9 @@ def main():
     rho_plot = rho_bbb.copy()
     rho_plot[rho_plot == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, rho_plot.T, cmap="viridis", shading="flat")
-    cbar = fig.colorbar(im, ax=ax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -125,7 +127,9 @@ def main():
     rho_plot_ibu = rho_ibu.copy()
     rho_plot_ibu[rho_plot_ibu == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, rho_plot_ibu.T, cmap="viridis", shading="flat")
-    cbar = fig.colorbar(im, ax=ax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label=r"$\rho(\ln 1/\Delta\theta, \ln k_T)$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation (IBU)",
@@ -141,7 +145,9 @@ def main():
     c_plot[c_plot == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, c_plot.T, cmap="RdYlBu_r", shading="flat",
                        vmin=0.8, vmax=3.0)
-    cbar = fig.colorbar(im, ax=ax, label=r"$C(i,j) = N_{\mathrm{genBefore}} / N_{\mathrm{reco}}$")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label=r"$C(i,j) = N_{\mathrm{genBefore}} / N_{\mathrm{reco}}$")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -299,9 +305,10 @@ def main():
     # Show only populated region
     resp_plot = response.copy()
     resp_plot[resp_plot == 0] = np.nan
-    im = ax.imshow(resp_plot, cmap="Blues", aspect="auto", origin="lower",
+    im = ax.imshow(resp_plot, cmap="Blues", aspect="equal", origin="lower",
                    vmin=0, vmax=0.5)
-    cbar = fig.colorbar(im, ax=ax, label="Migration probability")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Migration probability")
     ax.set_xlabel("Reco bin (flat index)")
     ax.set_ylabel("Gen bin (flat index)")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -314,7 +321,9 @@ def main():
     df_plot[df_plot == 0] = np.nan
     im = ax.pcolormesh(X_EDGES, Y_EDGES, df_plot.T, cmap="RdYlGn", shading="flat",
                        vmin=0.0, vmax=1.0)
-    cbar = fig.colorbar(im, ax=ax, label="Diagonal fraction")
+    ax.set_aspect("equal")
+    cax = mh.utils.make_square_add_cbar(ax)
+    fig.colorbar(im, cax=cax, label="Diagonal fraction")
     ax.set_xlabel(r"$\ln(1/\Delta\theta)$")
     ax.set_ylabel(r"$\ln(k_T/\mathrm{GeV})$")
     mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
@@ -454,9 +463,10 @@ def main():
     if has_cov:
         log.info("\n--- Figure 8: Correlation matrix ---")
         fig, ax = plt.subplots(figsize=(10, 10))
-        im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="auto", origin="lower",
+        im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
                        vmin=-1, vmax=1)
-        cbar = fig.colorbar(im, ax=ax, label="Correlation coefficient")
+        cax = mh.utils.make_square_add_cbar(ax)
+        fig.colorbar(im, cax=cax, label="Correlation coefficient")
         ax.set_xlabel("Bin index (flat)")
         ax.set_ylabel("Bin index (flat)")
         mh.label.exp_label(exp="ALEPH", data=True, llabel="Open Simulation",
