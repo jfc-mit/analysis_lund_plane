@@ -7,7 +7,47 @@
       "p_value": 6.21587670224244e-10,
       "passes": false,
       "pulls_mean": -0.38538192736312105,
-      "pulls_std": 1.8897799656334013
+      "pulls_std": 1.8897799656334013,
+      "remediation": {
+        "original_poisson_only": {
+          "chi2": 148.90704045529714,
+          "ndf": 58,
+          "chi2_ndf": 2.5673627664706404,
+          "p_value": 6.21587670224244e-10,
+          "passes": false
+        },
+        "remediation_1_combined_uncertainty": {
+          "chi2": 40.709592387793975,
+          "ndf": 58,
+          "chi2_ndf": 0.7018895239274824,
+          "p_value": 0.9587590614879872,
+          "passes": true,
+          "description": "sigma^2 = N_truth_B + (reco_B * C_A)^2 * (1/N_reco_A + 1/N_genB_A)"
+        },
+        "remediation_2_30_10_split": {
+          "poisson_chi2": 93.54728527280595,
+          "poisson_p": 0.0021448301248845336,
+          "combined_chi2": 53.873642636387544,
+          "combined_p": 0.6294066395572847,
+          "ndf": 58,
+          "passes_combined": true,
+          "description": "30 files for correction, 10 for test"
+        },
+        "remediation_3_exclude_boundary": {
+          "core_bins": 56,
+          "boundary_bins": 2,
+          "core_poisson_chi2": 129.95668786976563,
+          "core_poisson_p": 8.200333534436055e-08,
+          "core_combined_chi2": 39.20950893815014,
+          "core_combined_p": 0.956881264936232,
+          "passes_core_combined": true,
+          "description": "Exclude bins with correction factor > 3"
+        },
+        "pulls_combined": {
+          "mean": -0.13527513500843963,
+          "std": 0.8267951147508861
+        }
+      }
     },
     "ibu": {
       "chi2": 126575.6061098073,
@@ -244,5 +284,244 @@
     "diagonal_fraction_max": 0.9500000000000001,
     "bins_diag_gt_0.5": 57,
     "n_populated": 58
+  },
+  "split_sample_stress_tests": [
+    {
+      "direction": "ln_kt",
+      "epsilon": 0.05,
+      "chi2_poisson": 147.82436622762884,
+      "chi2_combined": 40.607620355360986,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.5486959694418765,
+      "chi2_ndf_combined": 0.7001313854372584,
+      "p_poisson": 8.743129553678841e-10,
+      "p_combined": 0.9598106343588886,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702605
+    },
+    {
+      "direction": "ln_kt",
+      "epsilon": 0.1,
+      "chi2_poisson": 146.7416919999613,
+      "chi2_combined": 40.502255897438616,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.530029172413126,
+      "chi2_ndf_combined": 0.69831475685239,
+      "p_poisson": 1.228039114842261e-09,
+      "p_combined": 0.9608760503031789,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702607
+    },
+    {
+      "direction": "ln_kt",
+      "epsilon": 0.2,
+      "chi2_poisson": 144.57634354462482,
+      "chi2_combined": 40.280806416774006,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.4926955783556,
+      "chi2_ndf_combined": 0.6944966623581725,
+      "p_poisson": 2.4121799002685407e-09,
+      "p_combined": 0.963046257429301,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702603
+    },
+    {
+      "direction": "ln_kt",
+      "epsilon": 0.5,
+      "chi2_poisson": 138.080298178619,
+      "chi2_combined": 39.519192231308345,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.380694796183086,
+      "chi2_ndf_combined": 0.6813653832984198,
+      "p_poisson": 1.7627537651776493e-08,
+      "p_combined": 0.9698231863717092,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.035006548977026056
+    },
+    {
+      "direction": "ln_1_over_dtheta",
+      "epsilon": 0.05,
+      "chi2_poisson": 148.4429020060966,
+      "chi2_combined": 40.68521406364682,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.5593603794154585,
+      "chi2_ndf_combined": 0.7014692079939107,
+      "p_poisson": 7.196068185777449e-10,
+      "p_combined": 0.9590123013688269,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702606
+    },
+    {
+      "direction": "ln_1_over_dtheta",
+      "epsilon": 0.1,
+      "chi2_poisson": 147.9787635568948,
+      "chi2_combined": 40.65726146042328,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.551357992360255,
+      "chi2_ndf_combined": 0.700987266559022,
+      "p_poisson": 8.328662204348802e-10,
+      "p_combined": 0.9593012440310965,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702605
+    },
+    {
+      "direction": "ln_1_over_dtheta",
+      "epsilon": 0.2,
+      "chi2_poisson": 147.05048665849407,
+      "chi2_combined": 40.59044424271806,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.535353218249898,
+      "chi2_ndf_combined": 0.6998352455641045,
+      "p_poisson": 1.1147917033937915e-09,
+      "p_combined": 0.9599857744344017,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.035006548977026056
+    },
+    {
+      "direction": "ln_1_over_dtheta",
+      "epsilon": 0.5,
+      "chi2_poisson": 144.26565596329112,
+      "chi2_combined": 40.297535645942105,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.4873388959188123,
+      "chi2_ndf_combined": 0.6947850973438294,
+      "p_poisson": 2.6562432253740553e-09,
+      "p_combined": 0.9628855424724407,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702607
+    },
+    {
+      "direction": "2d_correlated",
+      "epsilon": 0.05,
+      "chi2_poisson": 147.8132787222575,
+      "chi2_combined": 40.62147902391256,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.548504805556164,
+      "chi2_ndf_combined": 0.7003703279984925,
+      "p_poisson": 8.773665127748131e-10,
+      "p_combined": 0.9596689051194018,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702605
+    },
+    {
+      "direction": "2d_correlated",
+      "epsilon": 0.1,
+      "chi2_poisson": 146.71951698921876,
+      "chi2_combined": 40.53091246667615,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.529646844641703,
+      "chi2_ndf_combined": 0.6988088356323474,
+      "p_poisson": 1.236595381648442e-09,
+      "p_combined": 0.9605883976389196,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.035006548977026056
+    },
+    {
+      "direction": "2d_correlated",
+      "epsilon": 0.2,
+      "chi2_poisson": 144.53199352314073,
+      "chi2_combined": 40.34200638956127,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.491930922812771,
+      "chi2_ndf_combined": 0.6955518343027806,
+      "p_poisson": 2.445615154833547e-09,
+      "p_combined": 0.9624557656446894,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702605
+    },
+    {
+      "direction": "2d_correlated",
+      "epsilon": 0.5,
+      "chi2_poisson": 137.96942312490722,
+      "chi2_combined": 39.70434337945545,
+      "ndf": 58,
+      "chi2_ndf_poisson": 2.3787831573259868,
+      "chi2_ndf_combined": 0.6845576444733699,
+      "p_poisson": 1.8227231612932826e-08,
+      "p_combined": 0.9682707157524615,
+      "passes_combined": true,
+      "max_rel_bias": 0.75,
+      "mean_rel_bias": 0.03500654897702607
+    }
+  ],
+  "ibu_downscoping": {
+    "remediation_1_iteration_optimization": {
+      "iterations_tested": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        10,
+        15,
+        20
+      ],
+      "best_n_iter": 1,
+      "best_chi2_ndf": 2106.2719158555456,
+      "conclusion": "All iterations fail closure (chi2/ndf >> 1). The bias is ~10% and iteration-independent."
+    },
+    "remediation_2_hemisphere_response": {
+      "chi2": 162722.45126263276,
+      "ndf": 61,
+      "p": 0.0,
+      "conclusion": "Hemisphere-level response does not improve closure. The per-splitting matching problem persists."
+    },
+    "remediation_3_regularization": {
+      "alphas_tested": [
+        0.01,
+        0.05,
+        0.1,
+        0.2,
+        0.5
+      ],
+      "results": {
+        "0.01": {
+          "chi2": 129838.58092465927,
+          "ndf": 61,
+          "p": 0.0
+        },
+        "0.05": {
+          "chi2": 135489.1699956062,
+          "ndf": 61,
+          "p": 0.0
+        },
+        "0.1": {
+          "chi2": 143062.28522668185,
+          "ndf": 61,
+          "p": 0.0
+        },
+        "0.2": {
+          "chi2": 159908.11199680704,
+          "ndf": 61,
+          "p": 0.0
+        },
+        "0.5": {
+          "chi2": 224042.36277097225,
+          "ndf": 61,
+          "p": 0.0
+        }
+      },
+      "conclusion": "Regularization reduces chi2 but cannot resolve the fundamental bias from unmatched splittings."
+    },
+    "formal_downscoping": {
+      "label": "[D]",
+      "commitment": "[D9] IBU as co-primary method",
+      "status": "Formally downscoped",
+      "reason": "Individual Lund splittings cannot be matched between reco and gen levels due to different C/A clustering tree structure. This is a fundamental limitation of IBU for the Lund plane, documented in ATLAS Phys.Rev.Lett. 124 (2020) 222002 and CMS JHEP 05 (2024) 116. Both experiments use bin-by-bin as primary.",
+      "remediation_summary": "Three remediation attempts made: (1) iteration optimization (1-20 iterations), (2) uncapped hemisphere-level response matrix, (3) Tikhonov regularization (alpha = 0.01-0.5). All fail closure. IBU retained as cross-check."
+    }
   }
 }

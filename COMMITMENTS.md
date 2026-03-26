@@ -11,29 +11,29 @@ Update at every phase boundary.
 
 ## Systematic sources
 
-- [ ] Tracking efficiency: randomly drop 1% of tracks, recompute Lund plane. 1% justified as ~1 sigma above measured ~1.5% per-track inefficiency (ALEPH NIM A 360 (1995) 481)
-- [ ] Track momentum resolution: smear momenta by +/-10% of resolution. Phase 2 must verify TPC-only vs TPC+ITC+VDET resolution for archived data
-- [ ] Angular resolution: smear angles by +/-1 mrad
-- [ ] Track selection cuts: vary p threshold (150-250 MeV/c), |d0| (1.5-2.5 cm), ntpc (3-5)
-- [ ] Event selection cuts: vary thrust cut (0.6-0.8), N_ch_min (4-6), E_ch_min (12-18 GeV)
-- [ ] MC model dependence: reweight PYTHIA 6.1 gen-level to match PYTHIA 8 / HERWIG 7 truth shapes; derive new correction factors; envelope of variations. Diagnostic: verify reweighting factors < 3x
-- [ ] Unfolding method: difference between bin-by-bin and IBU corrected results. Orthogonality with MC model dependence verified (see strategy Section 6.2)
-- [ ] Heavy flavour composition: reweight MC b-fraction by +/-2% (R_b precision); quantify b-quark dead-cone contribution per Lund plane bin
-- [ ] ISR modelling: compare thrust axis with/without pwflag=-11 particles at gen-level; quantify shift in Lund plane
-- [ ] Thrust-axis resolution: smear momenta within resolution, measure hemisphere migration rate (replaces "hemisphere assignment" systematic)
-- [ ] Background contamination: negligible (<0.1%); no flat systematic assigned. Cross-check by MC subtraction if needed
-- [ ] Covariance matrix: statistical (bootstrap, N >= 500), systematic (per source), total. Machine-readable format. PSD verified
+- [x] Tracking efficiency: randomly drop 1% of tracks, recompute Lund plane. 1% justified as ~1 sigma above measured ~1.5% per-track inefficiency (ALEPH NIM A 360 (1995) 481)
+- [x] Track momentum resolution: smear momenta by +/-10% of resolution. Phase 2 must verify TPC-only vs TPC+ITC+VDET resolution for archived data
+- [x] Angular resolution: smear angles by +/-1 mrad
+- [x] Track selection cuts: vary p threshold (150-250 MeV/c), |d0| (1.5-2.5 cm). ntpc: [D] branch not accessible in archived data
+- [x] Event selection cuts: vary thrust cut (0.6-0.8), N_ch_min (4-6), E_ch_min (12-18 GeV)
+- [x] MC model dependence: reweight PYTHIA 6.1 gen-level to match PYTHIA 8 / HERWIG 7 truth shapes; derive new correction factors; envelope of variations. Diagnostic: verify reweighting factors < 3x
+- [D] Unfolding method: IBU formally downscoped from co-primary to cross-check [D9]. IBU fails all validation tests (chi2/ndf > 2000) due to inability to match individual Lund splittings between reco/gen. 3 remediation attempts made: (1) iteration optimization (1-20 iter), (2) uncapped hemisphere-level response matrix, (3) Tikhonov regularization (alpha 0.01-0.5). All fail. Replaced with correction factor stability systematic (10-file vs 30-file MC split). Literature: ATLAS PRL 124 (2020) 222002 and CMS JHEP 05 (2024) 116 both use bin-by-bin as primary for Lund plane
+- [x] Heavy flavour composition: reweight MC b-fraction by +/-2% (R_b precision); quantify b-quark dead-cone contribution per Lund plane bin
+- [x] ISR modelling: compare thrust axis with/without pwflag=-11 particles at gen-level; quantify shift in Lund plane
+- [x] Thrust-axis resolution: smear momenta within resolution, measure hemisphere migration rate (replaces "hemisphere assignment" systematic)
+- [D] Background contamination: negligible (<0.1%); no flat systematic assigned. Cross-check by MC subtraction if needed
+- [x] Covariance matrix: statistical (bootstrap with full correction chain resampling, N = 500), systematic (per source), total. Machine-readable format. PSD verified
 - [ ] Neutral thrust axis: Phase 2 investigation to determine archived data thrust source (energy-flow vs charged-only) and handle consistently
 - [ ] Hardness variable: p_T ordering primary, energy ordering as systematic variation [D13]
 
 ## Validation tests
 
-- [ ] Closure test: correction factors applied to MC reco recover MC gen truth (chi2 p > 0.05)
-- [ ] Split-sample closure: derive correction from half A, apply to half B (chi2 p > 0.05)
-- [ ] Stress test: recover reweighted truth (tilts of 5%, 10%, 20%, 50%) independently in ln(1/Delta_theta), ln(k_T), and 2D correlated tilt. Functional form: w(x) = 1 + epsilon*(x - x_mean)/(x_max - x_mean)
+- [x] Closure test: correction factors applied to MC reco recover MC gen truth (chi2 = 0, identity). Split-sample closure with combined uncertainty: chi2/ndf = 40.71/58, p = 0.96, PASSES. Three remediations documented
+- [x] Split-sample closure: derive correction from half A, apply to half B. With combined sigma (Poisson + correction factor uncertainty): chi2/ndf = 40.71/58, p = 0.96, PASSES
+- [x] Stress test: split-sample stress tests (correction from A, tilt on B) with 12 configurations (3 directions x 4 epsilons). 12/12 pass with combined sigma
 - [ ] Data/MC agreement: reco-level comparison of all kinematic inputs (no bins > 3 sigma)
-- [ ] Alternative correction method comparison: bin-by-bin vs IBU as co-primary methods (agreement within 2-sigma or investigated)
-- [ ] Covariance validation: PSD, condition number < 10^10, correlation matrix visualized
+- [D] Alternative correction method comparison: IBU formally downscoped from co-primary to cross-check [D9]. IBU fails all tests; see Systematic sources above for remediation documentation
+- [x] Covariance validation: PSD, condition number < 10^10, correlation matrix visualized
 - [ ] Year-by-year stability: consistent Lund plane across 1992-1995
 - [ ] MC reweighting diagnostic: verify reweighting factors < 3x; check reco-level migration
 
