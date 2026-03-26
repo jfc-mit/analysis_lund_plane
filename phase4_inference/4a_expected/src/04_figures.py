@@ -302,7 +302,7 @@ def main():
     # Show only populated region
     resp_plot = response.copy()
     resp_plot[resp_plot == 0] = np.nan
-    im = ax.imshow(resp_plot, cmap="Blues", aspect="equal", origin="lower",
+    im = ax.imshow(resp_plot, cmap="Blues", origin="lower",
                    vmin=0, vmax=0.5)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Migration probability")
@@ -459,7 +459,7 @@ def main():
     if has_cov:
         log.info("\n--- Figure 8: Correlation matrix ---")
         fig, ax = plt.subplots(figsize=(10, 10))
-        im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
+        im = ax.imshow(corr_matrix, cmap="RdBu_r", origin="lower",
                        vmin=-1, vmax=1)
         cax = mh.utils.make_square_add_cbar(ax)
         fig.colorbar(im, cax=cax, label="Correlation coefficient")

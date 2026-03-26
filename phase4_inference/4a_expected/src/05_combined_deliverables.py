@@ -665,7 +665,7 @@ def main():
 
     # Fig 7: Correlation matrix
     fig, ax = plt.subplots(figsize=(10, 10))
-    im = ax.imshow(corr_matrix, cmap="RdBu_r", aspect="equal", origin="lower",
+    im = ax.imshow(corr_matrix, cmap="RdBu_r", origin="lower",
                    vmin=-1, vmax=1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Correlation")
@@ -711,7 +711,7 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
     r_plot = response.copy()
     r_plot[r_plot == 0] = np.nan
-    im = ax.imshow(r_plot, cmap="Blues", aspect="equal", origin="lower", vmin=0, vmax=0.5)
+    im = ax.imshow(r_plot, cmap="Blues", origin="lower", vmin=0, vmax=0.5)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Migration probability")
     ax.set_xlabel("Reco bin")

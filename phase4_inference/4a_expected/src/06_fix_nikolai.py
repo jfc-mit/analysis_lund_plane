@@ -1210,7 +1210,7 @@ def main():
     # Fig: Updated correlation matrix (populated bins only)
     fig, ax = plt.subplots(figsize=(10, 10))
     corr_pop = corr_matrix[np.ix_(pop_idx, pop_idx)]
-    im = ax.imshow(corr_pop, cmap="RdBu_r", aspect="equal", origin="lower",
+    im = ax.imshow(corr_pop, cmap="RdBu_r", origin="lower",
                    vmin=-1, vmax=1)
     cax = mh.utils.make_square_add_cbar(ax)
     fig.colorbar(im, cax=cax, label="Correlation")
