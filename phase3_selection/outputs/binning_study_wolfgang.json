@@ -1,0 +1,27 @@
+{
+  "current_10x10": {
+    "total_bins": 100,
+    "populated_data": 59,
+    "populated_reco": 58,
+    "total_data_splittings": 24466489,
+    "total_reco_splittings": 6273941,
+    "avg_data_per_bin": 414686.25423728814,
+    "core_avg_data_per_bin": 424381.55555555556,
+    "mean_diag_fraction": 0.8359794131923808
+  },
+  "estimate_15x15": {
+    "total_bins": 225,
+    "est_populated": 132,
+    "est_avg_data_per_bin": 184305.00188323917,
+    "est_core_avg": 188614.02469135803,
+    "viable_core": true
+  },
+  "estimate_20x20": {
+    "total_bins": 400,
+    "est_populated": 236,
+    "est_avg_data_per_bin": 103671.56355932204,
+    "est_core_avg": 106095.38888888889,
+    "viable_core": true
+  },
+  "recommendation": "15x15 if core avg >= 500; requires Phase 3 reprocessing for proper study"
+}

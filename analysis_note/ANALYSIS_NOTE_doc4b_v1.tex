@@ -626,10 +626,14 @@ Only 4 bins at the kinematic boundaries have $C > 2$.
 \centering
 \includegraphics[height=0.45\linewidth]{figures/ingrid_correction_factor_map.pdf}
 \caption{Bin-by-bin correction factor map $C(i,j) = N_\text{genBefore}/N_\text{reco}$
-  across the Lund plane.  The correction is close to unity in the
-  densely populated core and increases at the kinematic boundaries
-  where detector effects are larger.  The minimum value of 1.17
-  reflects the $\sim\!79\%$ event selection efficiency.  This map is
+  across the Lund plane.  The correction ranges from approximately
+  1.2 to 3.0, with a median value of 1.47 in the populated region.
+  The minimum value of 1.17 reflects the $\sim\!79\%$ event selection
+  efficiency ($1/0.79 \approx 1.27$), with additional contributions from
+  detector resolution effects.  Even in the densely populated core the
+  correction is typically 1.3--1.5, increasing further at the kinematic
+  boundaries where detector effects and bin migration are larger.
+  Only 4 bins at the kinematic boundaries have $C > 2$.  This map is
   the central input to the measurement: multiplicative application to
   the data reco-level counts yields the corrected particle-level density.}
 \label{fig:correction-map}
@@ -879,25 +883,20 @@ uncertainty.
 \label{sec:syst-tracking}
 
 The tracking efficiency systematic accounts for the difference in
-charged-particle reconstruction efficiency between data and MC.
-The per-track efficiency of the ALEPH TPC is $\sim\!98.5\%$ for
+charged-particle reconstruction efficiency between data and simulation.
+The per-track efficiency of the ALEPH TPC is approximately 98.5\% for
 isolated tracks with $p > 200$~MeV/$c$ in the barrel
-region~\cite{ALEPH:1995aqm}.
-
-\textbf{Method:} Randomly drop 1\% of charged tracks from the MC
-reco-level sample, recompute the Lund plane, and rederive correction
-factors.  The 1\% drop rate is chosen as approximately 1$\sigma$ above
-the measured $\sim\!1.5\%$ per-track inefficiency, providing a
-conservative systematic envelope.
-
-\textbf{Impact:} Maximum relative shift of 5.7\% at boundary bins;
-mean relative shift $\sim\!1\%$ across populated bins.  The impact
-is largest in the low-$k_T$ region where soft tracks dominate and
-track reconstruction is least efficient.
-
-\textbf{Interpretation:} This is a subdominant systematic, consistent
-with the 0.5--1.5\% range found in published ALEPH
-measurements~\cite{ALEPH:1998vtv}.
+region~\cite{ALEPH:1995aqm}.  To evaluate the impact on the measured
+Lund plane density, 1\% of charged tracks are randomly dropped from the
+MC reco-level sample, and the full correction chain is recomputed.  The
+1\% drop rate is chosen as approximately $1\sigma$ above the measured
+$\sim\!1.5\%$ per-track inefficiency, providing a conservative
+systematic envelope.  The maximum relative shift across populated bins
+is 5.7\%, concentrated at the kinematic boundaries where soft tracks
+dominate and the reconstruction efficiency is lowest.  The mean impact
+of approximately 1\% across the plane is consistent with the 0.5--1.5\%
+range found in published ALEPH measurements~\cite{ALEPH:1998vtv},
+confirming this is a subdominant contribution to the total uncertainty.
 
 \subsection{Momentum resolution}
 \label{sec:syst-momentum}
@@ -907,178 +906,151 @@ of the ALEPH tracking system.  Phase~2 exploration determined that
 the archived track reconstruction uses TPC+ITC combined tracking
 with $\sigma_p / p^2 \sim 0.8$--$1.0 \times 10^{-3}$~(GeV/$c$)$^{-1}$,
 based on impact parameter distributions~\cite{ALEPH:1995aqm}.
-
-\textbf{Method:} Smear track momenta by $\pm 10\%$ of the nominal
-resolution.  Recompute the Lund plane and rederive corrections.
-
-\textbf{Impact:} Maximum relative shift of 1.1\%; mean $\sim\!0.3\%$.
-This is negligible compared to other sources, reflecting the excellent
-ALEPH tracking resolution.
-
-\textbf{Interpretation:} Deeply subdominant.  The momentum resolution
-is far better than the bin widths, so smearing has minimal effect on
-bin migration.
+Track momenta are smeared by $\pm 10\%$ of the nominal resolution and the
+full correction chain is recomputed.  The resulting maximum relative shift
+is 1.1\%, with a mean of approximately 0.3\% across populated bins.  This
+is negligible compared to other sources, reflecting the excellent ALEPH
+tracking resolution: the momentum resolution is far better than the bin
+widths of the Lund plane, so smearing has minimal effect on bin migration.
+This source is deeply subdominant.
 
 \subsection{Angular resolution}
 \label{sec:syst-angular}
 
 The angular resolution of the ALEPH tracking system is approximately
 1~mrad, sufficient to resolve the opening angles entering the Lund
-plane construction.
-
-\textbf{Method:} Smear track angles by $\pm 1$~mrad.
-
-\textbf{Impact:} Maximum relative shift of 100\% at one boundary bin
-with very low population; mean $\sim\!5\%$.  The large boundary-bin
-shift reflects the sensitivity of the opening angle $\Delta\theta$
-near the edge of the phase space.  In the core of the Lund plane,
-the impact is $<\!2\%$.
-
-\textbf{Interpretation:} The boundary sensitivity is driven by a single
-bin and does not affect the physics content of the measurement.  This
-systematic is subdominant in the populated region.
+plane construction.  Track angles are smeared by $\pm 1$~mrad, and the
+full correction chain is recomputed.  The maximum relative shift reaches
+100\% at one boundary bin with very low population, while the mean across
+all populated bins is approximately 5\%.  In the core of the Lund plane,
+where the physics content of the measurement resides, the impact is
+below 2\%.  The large boundary-bin shift reflects the sensitivity of
+$\Delta\theta$ near the edge of phase space, where small absolute
+angular changes can move splittings across the bin boundary.  This
+effect is driven by a single bin and does not affect the measurement
+in the populated region, where this systematic is subdominant.
 
 \subsection{Track $p$ threshold}
 \label{sec:syst-p-threshold}
 
 The track momentum threshold is the standard ALEPH value of
 200~MeV/$c$, below which the TPC resolution degrades~\cite{ALEPH:1998hhr}.
-
-\textbf{Method:} Vary the track momentum threshold from 150 to
-250~MeV/$c$ (nominal: 200~MeV/$c$).
-
-\textbf{Impact:} Maximum relative shift of 107\% (low threshold) and
-86\% (high threshold) at boundary bins.  Mean impact $\sim\!10\%$.
-This is one of the larger systematics because the low-$k_T$ region
-of the Lund plane is populated by soft tracks near the threshold.
-
-\textbf{Interpretation:} Dominant in the non-perturbative region.
-The standard ALEPH threshold of 200~MeV/$c$ is well-established and
-the $\pm 50$~MeV/$c$ variation covers the range of thresholds used
-in published ALEPH analyses.
+The threshold is varied from 150 to 250~MeV/$c$ (nominal: 200~MeV/$c$),
+and the full correction chain is recomputed at each variation point.  The
+maximum relative shift reaches 107\% (low threshold) and 86\% (high
+threshold) at boundary bins, with a mean impact of approximately 10\%
+across populated bins.  This is one of the larger systematic sources because
+the low-$k_T$ region of the Lund plane is populated by soft tracks whose
+transverse momenta lie near the reconstruction threshold.  Lowering the
+threshold admits additional soft splittings that alter the density in the
+non-perturbative region, while raising it removes them.  The $\pm 50$~MeV/$c$
+variation covers the range of thresholds used in published ALEPH
+analyses~\cite{ALEPH:1998hhr}, and this systematic is dominant in the
+non-perturbative region of the plane.
 
 \subsection{Track $d_0$ cut}
 \label{sec:syst-d0}
 
 The transverse impact parameter cut removes secondary decay products
-and material interactions.
-
-\textbf{Method:} Vary the transverse impact parameter cut from 1.5 to
-2.5~cm (nominal: 2.0~cm).
-
-\textbf{Impact:} Maximum relative shift of 10\% (tight cut) and
-0.01\% (loose cut); mean $\sim\!1\%$.  The asymmetry indicates
-that tightening the $d_0$ cut preferentially removes secondary
-decay products (e.g., from $K^0_S$, $\Lambda$), which contribute
-to the wide-angle, low-$k_T$ region.
-
-\textbf{Interpretation:} Subdominant.  The impact is confined to
-the non-perturbative region.
+and material interactions.  The cut is varied from 1.5 to 2.5~cm
+(nominal: 2.0~cm), and the full correction chain is recomputed.  The
+maximum relative shift is 10\% (tight cut) and 0.01\% (loose cut),
+with a mean of approximately 1\%.  The pronounced asymmetry between
+the two variations indicates that tightening the $d_0$ cut
+preferentially removes secondary decay products (e.g., from
+$K^0_S$ and $\Lambda$ decays), which contribute to the wide-angle,
+low-$k_T$ region of the Lund plane.  The impact is confined to the
+non-perturbative region, and this source is subdominant.
 
 \subsection{Thrust cut}
 \label{sec:syst-thrust}
 
 The thrust cut defines the two-jet topology requirement for
-hemisphere splitting.
-
-\textbf{Method:} Vary the thrust cut from 0.6 to 0.8 (nominal: 0.7).
-
-\textbf{Impact:} Maximum relative shift of 6.5\% (looser cut) and
-1.1\% (tighter cut); mean $\sim\!1\%$.  Loosening the cut includes
-more multi-jet events where the hemisphere assignment is less clean.
-
-\textbf{Interpretation:} Subdominant.  The thrust cut primarily
-affects the event sample composition, not the per-hemisphere splitting
-pattern.
+hemisphere splitting.  The cut is varied from 0.6 to 0.8 (nominal:
+0.7), and the correction chain is recomputed.  The maximum relative
+shift is 6.5\% (looser cut) and 1.1\% (tighter cut), with a mean of
+approximately 1\%.  Loosening the cut includes more multi-jet events
+where the hemisphere assignment is less clean, introducing splittings
+with ambiguous hemisphere origin.  Tightening the cut restricts the
+sample to more pencil-like events, reducing the available phase space.
+The thrust cut primarily affects the event sample composition rather
+than the per-hemisphere splitting pattern, and this source is
+subdominant.
 
 \subsection{$N_\text{ch}$ minimum}
 \label{sec:syst-nch}
 
 The minimum charged multiplicity ensures meaningful jet clustering.
-
-\textbf{Method:} Vary the minimum charged multiplicity from 4 to 6
-(nominal: 5).
-
-\textbf{Impact:} Maximum relative shift of 0.01\%; mean $\sim\!0.01\%$.
-This is negligible because the minimum-track cut has essentially no
-effect on the selected sample (it was pre-applied during archiving).
-
-\textbf{Interpretation:} Negligible.
+The requirement is varied from 4 to 6 (nominal: 5), and the
+correction chain is recomputed.  The maximum relative shift is
+0.01\%, with a mean of approximately 0.01\%.  This is negligible
+because the minimum-track cut has essentially no effect on the
+selected sample: the archived data already has a pre-applied
+multiplicity requirement that ensures $N_{\text{ch}} \geq 5$ in
+virtually all events passing the selection.
 
 \subsection{$E_\text{ch}$ minimum}
 \label{sec:syst-ech}
 
 The minimum charged energy cut removes low-energy events from
-non-hadronic sources.
-
-\textbf{Method:} Compute the charged energy sum from track momenta
-and vary the threshold from 12 to 18~GeV (nominal $\sim$15~GeV from
-\texttt{passesAll}).
-
-\textbf{Impact:} Maximum relative shift of 0.5\%; mean $\sim\!0.1\%$.
-
-\textbf{Interpretation:} Negligible.  The charged energy cut has
-high acceptance for genuine hadronic $Z$ decays.
+non-hadronic sources.  The charged energy sum is computed from track
+momenta and the threshold is varied from 12 to 18~GeV (nominal
+$\sim$15~GeV from \texttt{passesAll}), with the correction chain
+recomputed at each variation.  The maximum relative shift is 0.5\%,
+with a mean of approximately 0.1\%.  This is negligible because the
+charged energy cut has high acceptance for genuine hadronic $Z$ decays
+and the variation range of $\pm 3$~GeV around the nominal encompasses
+the plausible uncertainty in the effective threshold.
 
 \subsection{Thrust-axis resolution}
 \label{sec:syst-thrust-axis}
 
 The thrust axis reconstruction has finite resolution from track
-momentum measurement uncertainties.
-
-\textbf{Method:} Smear track momenta within their resolution and
-recompute the thrust axis.  Measure the hemisphere migration rate
-(fraction of particles that change hemisphere assignment).
-
-\textbf{Impact:} Maximum relative shift of 0.02\%; mean $\sim\!0.01\%$.
-The thrust axis is determined by the full event momentum flow and
-is extremely stable against per-track momentum smearing.
-
-\textbf{Interpretation:} Negligible.  The thrust axis resolution
-is sub-milliradian.
+momentum measurement uncertainties.  To evaluate its impact, track
+momenta are smeared within their resolution and the thrust axis is
+recomputed, measuring the hemisphere migration rate (the fraction of
+particles that change hemisphere assignment).  The maximum relative
+shift in the corrected Lund plane density is 0.02\%, with a mean of
+approximately 0.01\%.  This is negligible because the thrust axis is
+determined by the full event momentum flow and is extremely stable
+against per-track momentum smearing, with a resolution at the
+sub-milliradian level.
 
 \subsection{MC model dependence}
 \label{sec:syst-model}
 
-The MC model dependence is the dominant systematic, accounting for
-the sensitivity of the correction factors to the assumed truth-level
-distribution.
-
-\textbf{Method:} Reweight the PYTHIA~6.1 gen-level Lund plane by a
-2D tilt of $\pm 20\%$, rederive correction factors from the reweighted
-MC, and apply to the nominal reco.  The reweighting simulates the
-effect of using a different MC generator (e.g., PYTHIA~8 or
-HERWIG~7) with a different truth-level shape.
-
-\textbf{Impact:} Maximum relative shift $\sim\!10\%$; largest in the
-non-perturbative region ($\ln k_T < 0$) where hadronization models
-differ most.  In the perturbative core ($\ln k_T > 1$), the impact
-is $<\!3\%$.
-
-\textbf{Interpretation:} This is the dominant systematic, consistent
-with findings from ATLAS~\cite{ATLAS:2020bbn} (5--30\% model
-dependence) and CMS~\cite{CMS:2024mlf}.  The reweighting approach
-provides a lower bound on the true model dependence; a full alternative
-generator comparison with PYTHIA~8 and HERWIG~7 at particle level would
-provide a more complete assessment.  \tbd{Full generator comparison
-to be performed in Phase~4c.}
+The MC model dependence is the dominant systematic source, accounting
+for the sensitivity of the correction factors to the assumed
+truth-level distribution.  Because only PYTHIA~6.1 is available as a
+full detector simulation, the model dependence is estimated by
+reweighting the PYTHIA~6.1 gen-level Lund plane by a 2D tilt of
+$\pm 20\%$, rederiving correction factors from the reweighted MC, and
+applying them to the nominal reco-level distribution.  This procedure
+simulates the effect of using a different MC generator (e.g.,
+PYTHIA~8 or HERWIG~7) with a different truth-level shape.  The maximum
+relative shift is approximately 10\%, largest in the non-perturbative
+region ($\ln k_T < 0$) where hadronization models differ most.  In the
+perturbative core ($\ln k_T > 1$), the impact is below 3\%.  These
+magnitudes are consistent with findings from ATLAS~\cite{ATLAS:2020bbn}
+(5--30\% model dependence) and CMS~\cite{CMS:2024mlf}.  The
+reweighting approach provides a lower bound on the true model
+dependence; a full alternative generator comparison with PYTHIA~8 and
+HERWIG~7 at particle level would provide a more complete
+assessment.  \tbd{Full generator comparison to be performed in
+Phase~4c.}
 
 \subsection{Correction factor stability}
 \label{sec:syst-corr-stability}
 
 This systematic quantifies the MC statistical uncertainty in the
-correction procedure.
-
-\textbf{Method:} Compare correction factors derived from a 10-file MC
-subset vs.\ a 30-file MC subset.
-
-\textbf{Impact:} Variable across bins; driven by the limited MC
-statistics in the subset.
-
-\textbf{Interpretation:} This replaces the previously committed
-``unfolding method'' systematic (IBU-vs-BBB difference), which was
-removed because it quantified IBU's known failure, not a genuine
-measurement uncertainty.
+correction procedure by comparing correction factors derived from a
+10-file MC subset with those from a 30-file MC subset.  The resulting
+shift is variable across bins, driven by the limited MC statistics in
+the smaller subset.  This systematic replaces the previously committed
+``unfolding method'' systematic (the IBU-vs-BBB difference), which was
+removed because it quantified the known failure of IBU on the Lund plane
+observable rather than a genuine measurement uncertainty (see
+Section~\ref{sec:ibu-downscoping}).
 
 \subsection{Heavy flavour composition}
 \label{sec:syst-heavy-flavour}
@@ -1086,29 +1058,22 @@ measurement uncertainty.
 The $Z$ boson produces $b\bar{b}$ pairs at a rate $R_b = 0.21629
 \pm 0.00066$~\cite{ParticleDataGroup:2024cfk}.  The $b$-quark mass
 ($m_b \sim 4.2$~GeV) creates a dead-cone effect that modifies the
-collinear region of the Lund plane~\cite{LHCb:2025viq}.
-
-\textbf{Method:} Reweight the MC $b$-quark fraction by
-$\pm 2\%$ and rederive correction factors.
-
-\textbf{Impact:} Maximum relative shift of 0.2\%.
-
-\textbf{Interpretation:} Negligible.  The $b$-fraction is known to
-sub-percent precision and the reweighting has a small effect.
+collinear region of the Lund plane~\cite{LHCb:2025viq}.  To evaluate
+the sensitivity, the MC $b$-quark fraction is reweighted by $\pm 2\%$
+and correction factors are rederived.  The maximum relative shift is
+0.2\%, which is negligible.  The $b$-fraction is known to sub-percent
+precision and the reweighting has a correspondingly small effect on
+the inclusive Lund plane density.
 
 \subsection{ISR modelling}
 \label{sec:syst-isr}
 
-Initial-state radiation at the $Z$ pole is a small effect
-(beamstrahlung energy loss $\sim\!0.1\%$ of $\sqrt{s}$).
-
-\textbf{Method:} Compare the thrust axis computed from all gen-level
-charged particles with and without \texttt{pwflag} $= -11$ particles
-(ISR/material interactions).
-
-\textbf{Impact:} Maximum relative shift of 0.1\%.
-
-\textbf{Interpretation:} Negligible.
+Initial-state radiation at the $Z$ pole is a small effect, with
+beamstrahlung energy loss of approximately 0.1\% of $\sqrt{s}$.  The
+thrust axis is compared as computed from all gen-level charged particles
+with and without \texttt{pwflag}~$= -11$ particles (ISR and material
+interactions).  The maximum relative shift in the corrected Lund plane
+density is 0.1\%, which is negligible.
 
 \subsection{Summary of systematic uncertainties}
 \label{sec:syst-summary}
