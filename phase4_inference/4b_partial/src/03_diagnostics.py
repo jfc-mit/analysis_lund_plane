@@ -106,7 +106,7 @@ def plot_data_mc_ratio_2d(inputs):
     ax.set_ylabel(r"$\ln(k_T / \mathrm{GeV})$")
 
     mh.label.exp_label(
-        exp="ALEPH", data=True, llabel="Open Data (10%) / Open Simulation",
+        exp="ALEPH", data=True, llabel="Open Data (10%)",
         rlabel=r"$\sqrt{s} = 91.2$ GeV", loc=0, ax=ax,
     )
 

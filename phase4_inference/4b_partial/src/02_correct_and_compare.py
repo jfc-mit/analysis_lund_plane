@@ -237,7 +237,7 @@ def plot_ratio_to_expected(rho_data, inputs):
     ax.set_ylabel(r"$\ln(k_T / \mathrm{GeV})$")
 
     mh.label.exp_label(
-        exp="ALEPH", data=True, llabel="Open Data (10%) / MC Expected",
+        exp="ALEPH", data=True, llabel="Open Data (10%)",
         rlabel=r"$\sqrt{s} = 91.2$ GeV", loc=0, ax=ax,
     )
 
@@ -269,7 +269,7 @@ def plot_pull_map(comparison):
 
     mh.label.exp_label(
         exp="ALEPH", data=True,
-        llabel=f"Pulls (10% Data vs Expected), $\\chi^2$/ndf = {comparison['chi2']:.1f}/{comparison['ndf']}",
+        llabel="Open Data (10%)",
         rlabel=r"$\sqrt{s} = 91.2$ GeV", loc=0, ax=ax,
     )
 
