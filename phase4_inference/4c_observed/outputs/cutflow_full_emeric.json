@@ -1,0 +1,57 @@
+{
+  "per_file": [
+    {
+      "file": "LEP1Data1992_recons_aftercut-MERGED.root",
+      "total": 551474,
+      "after_selection": 518770,
+      "after_hemi_cut": 514820,
+      "hemispheres": 1029640,
+      "splittings": 5239636
+    },
+    {
+      "file": "LEP1Data1993_recons_aftercut-MERGED.root",
+      "total": 538601,
+      "after_selection": 506313,
+      "after_hemi_cut": 502452,
+      "hemispheres": 1004904,
+      "splittings": 5109631
+    },
+    {
+      "file": "LEP1Data1994P1_recons_aftercut-MERGED.root",
+      "total": 433947,
+      "after_selection": 408028,
+      "after_hemi_cut": 404768,
+      "hemispheres": 809536,
+      "splittings": 4110071
+    },
+    {
+      "file": "LEP1Data1994P2_recons_aftercut-MERGED.root",
+      "total": 447844,
+      "after_selection": 421031,
+      "after_hemi_cut": 417796,
+      "hemispheres": 835592,
+      "splittings": 4248104
+    },
+    {
+      "file": "LEP1Data1994P3_recons_aftercut-MERGED.root",
+      "total": 483649,
+      "after_selection": 454563,
+      "after_hemi_cut": 451048,
+      "hemispheres": 902096,
+      "splittings": 4583076
+    },
+    {
+      "file": "LEP1Data1995_recons_aftercut-MERGED.root",
+      "total": 595095,
+      "after_selection": 559679,
+      "after_hemi_cut": 555310,
+      "hemispheres": 1110620,
+      "splittings": 5644274
+    }
+  ],
+  "total_events_raw": 3050610,
+  "total_selected": 2868384,
+  "total_hemi_cut": 2846194,
+  "total_hemispheres": 5692388,
+  "total_splittings": 28934792
+}
